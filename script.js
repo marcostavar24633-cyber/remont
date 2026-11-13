@@ -11,3 +11,10 @@ if (toggle && mobileNav) {
   }));
 }
 document.getElementById('year').textContent = new Date().getFullYear();
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav && toggle) {
+    mobileNav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+});
