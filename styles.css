@@ -24,3 +24,19 @@ html { scroll-padding-top: 24px; }
   }
   .hero-image, .portfolio-item:hover img, .button:hover { transform: none !important; }
 }
+
+
+/* FAQ: понятные раскрывающиеся ответы без JavaScript */
+.faq{background:#f5f4f0}
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}
+.faq-heading>p:not(.section-kicker){max-width:390px;color:#777b75;font-size:12px;line-height:1.9;margin:22px 0 26px}
+.faq-heading .button{margin-top:4px}
+.faq-list{border-top:1px solid #d9d9d1}
+.faq-item{border-bottom:1px solid #d9d9d1;padding:0}
+.faq-item summary{position:relative;list-style:none;cursor:pointer;padding:23px 42px 23px 0;font-size:14px;font-weight:700;line-height:1.55}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:5px;top:18px;color:#a87950;font-size:24px;font-weight:400}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:focus-visible{outline:3px solid #d6a16e;outline-offset:4px}
+.faq-item p{max-width:620px;margin:0;padding:0 35px 22px 0;color:#777b75;font-size:12px;line-height:1.9}
+@media(max-width:800px){.faq-grid{grid-template-columns:1fr;gap:38px}}
