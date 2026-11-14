@@ -39,7 +39,7 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       const dropdownWasOpen = dropdown?.classList.contains('is-open');
-      setMenuOpen(false);
+      if (mobileNav?.classList.contains('open')) setMenuOpen(false);
       dropdown?.classList.remove('is-open');
       dropdownToggle?.setAttribute('aria-expanded', 'false');
       if (dropdownWasOpen && toggle?.getAttribute('aria-expanded') !== 'true') dropdownToggle?.focus();
