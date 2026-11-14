@@ -127,3 +127,7 @@ button:focus-visible,
 .service-page .mobile-nav{background:#202721}
 @media(max-width:800px){.process-grid{grid-template-columns:1fr;gap:35px}.service-hero{min-height:620px}.service-hero-content{padding-top:90px}.detail-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.service-hero{min-height:650px}.service-hero h1{font-size:46px}.breadcrumbs{margin-bottom:30px}.detail-grid{grid-template-columns:1fr}.detail-card{min-height:0}.service-hero-content{padding-bottom:70px}}
+
+.service-more{display:inline-flex;align-items:center;gap:10px;margin-top:14px;width:max-content;font-size:10px;font-weight:800;color:#8a5a32;border-bottom:1px solid #c9a17c;padding-bottom:4px}
+.service-more span{font-size:15px}
+.service-more:hover{color:#202521}
