@@ -14,6 +14,8 @@
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     document.body.classList.toggle('navigation-open', open);
+    if (open) mobileGroupToggle?.focus();
+    else toggle.focus();
   };
   toggle?.addEventListener('click', () => setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true'));
   mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
@@ -36,9 +38,17 @@
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
+      const dropdownWasOpen = dropdown?.classList.contains('is-open');
       setMenuOpen(false);
       dropdown?.classList.remove('is-open');
       dropdownToggle?.setAttribute('aria-expanded', 'false');
+      if (dropdownWasOpen && toggle?.getAttribute('aria-expanded') !== 'true') dropdownToggle?.focus();
+    }
+    if (event.key === 'Tab' && mobileNav?.classList.contains('open')) {
+      const focusable = [...mobileNav.querySelectorAll('a[href],button:not([disabled])')];
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
     }
   });
   const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
