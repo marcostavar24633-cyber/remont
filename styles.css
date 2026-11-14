@@ -40,3 +40,55 @@ html { scroll-padding-top: 24px; }
 .faq-item summary:focus-visible{outline:3px solid #d6a16e;outline-offset:4px}
 .faq-item p{max-width:620px;margin:0;padding:0 35px 22px 0;color:#777b75;font-size:12px;line-height:1.9}
 @media(max-width:800px){.faq-grid{grid-template-columns:1fr;gap:38px}}
+
+
+/* Дополнительная полировка доступности и мобильного управления */
+:root {
+  --text-muted-accessible: #666b65;
+  --focus-accessible: #8a5a32;
+}
+.intro-copy,
+.section-heading > p,
+.small-note,
+.approach-desc,
+.step p,
+.portfolio-intro p,
+.portfolio-upload-note p,
+.faq-heading > p:not(.section-kicker),
+.faq-item p,
+.contact-copy,
+.contact-panel > p,
+.privacy-note {
+  color: var(--text-muted-accessible);
+}
+a:focus-visible,
+button:focus-visible,
+.faq-item summary:focus-visible {
+  outline-color: var(--focus-accessible);
+}
+#services, #approach, #portfolio, #faq, #contacts {
+  scroll-margin-top: 24px;
+}
+@media (max-width: 800px) {
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-content: center;
+  }
+  .mobile-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 0;
+  }
+}
+@media (max-width: 560px) {
+  .mobile-call {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    min-height: 48px;
+  }
+  .footer {
+    padding-bottom: max(82px, calc(70px + env(safe-area-inset-bottom)));
+  }
+}
