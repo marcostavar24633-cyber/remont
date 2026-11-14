@@ -92,3 +92,38 @@ button:focus-visible,
     padding-bottom: max(82px, calc(70px + env(safe-area-inset-bottom)));
   }
 }
+
+
+/* Локальная SEO-страница ремонта квартир */
+.service-hero{min-height:650px;position:relative;display:flex;align-items:center;color:#fff;background:#222923;overflow:hidden}
+.service-hero-image{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85');background-position:center 55%;background-size:cover}
+.service-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,29,25,.92),rgba(22,29,25,.68) 52%,rgba(22,29,25,.18)),linear-gradient(0deg,rgba(16,20,17,.28),transparent 55%)}
+.service-hero-content{position:relative;padding-top:100px;padding-bottom:55px}
+.breadcrumbs{font-size:11px;color:#d8d9d2;margin-bottom:40px}
+.breadcrumbs a{color:#e2b488;text-decoration:underline;text-underline-offset:3px}
+.service-hero h1{font-size:clamp(46px,7vw,78px);line-height:1.08;letter-spacing:-.06em;font-weight:600;margin:25px 0 20px;max-width:800px}
+.service-hero h1 em{font-family:Georgia,serif;font-weight:400;color:#d4a16f}
+.detail-narrow{max-width:850px}
+.detail-narrow h2,.process-grid h2{font-size:clamp(34px,4vw,52px);line-height:1.15;letter-spacing:-.055em;font-weight:600;margin:0 0 26px}
+.detail-narrow h2 em,.process-grid h2 em{font-family:Georgia,serif;font-weight:400;color:#a87950}
+.detail-narrow p:not(.section-kicker),.detail-copy{font-size:14px;line-height:1.9;color:var(--text-muted-accessible);max-width:780px}
+.service-detail-list{background:#eae9e3}
+.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.detail-card{background:#f7f6f2;padding:28px;min-height:180px}
+.detail-card>span{font-size:10px;color:#a87950;letter-spacing:.15em}
+.detail-card h3{font-size:18px;margin:18px 0 9px}
+.detail-card p{font-size:12px;line-height:1.8;color:var(--text-muted-accessible);margin:0}
+.detail-disclaimer{font-size:10px;line-height:1.8;color:var(--text-muted-accessible);margin:22px 0 0}
+.service-detail-process{background:#f7f6f2}
+.process-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+.detail-copy{margin-top:22px}
+.detail-steps{list-style:none;margin:0;padding:0;border-top:1px solid #deded7}
+.detail-steps li{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid #deded7}
+.detail-steps li>b{font-size:10px;color:#a87950;padding-top:3px}
+.detail-steps h3{font-size:14px;margin:0 0 6px}
+.detail-steps p{font-size:12px;line-height:1.8;color:var(--text-muted-accessible);margin:0}
+.service-detail-faq{background:#f5f4f0}
+.service-page .header{position:absolute}
+.service-page .mobile-nav{background:#202721}
+@media(max-width:800px){.process-grid{grid-template-columns:1fr;gap:35px}.service-hero{min-height:620px}.service-hero-content{padding-top:90px}.detail-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.service-hero{min-height:650px}.service-hero h1{font-size:46px}.breadcrumbs{margin-bottom:30px}.detail-grid{grid-template-columns:1fr}.detail-card{min-height:0}.service-hero-content{padding-bottom:70px}}
