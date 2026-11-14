@@ -138,3 +138,25 @@ button:focus-visible,
   .hero-image { background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80'); }
   .service-hero-image { background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80'); }
 }
+
+
+/* Узкие экраны: дополнительная защита от горизонтального переполнения */
+@media (max-width: 380px) {
+  .container { width: calc(100% - 28px); }
+  .hero h1 { font-size: clamp(38px, 11.5vw, 44px); }
+  .service-hero h1 { font-size: clamp(38px, 11vw, 42px); }
+  .hero-content, .service-hero-content, .service-info, .detail-card,
+  .faq-heading, .faq-list, .contact-panel { min-width: 0; }
+  .hero h1, .service-hero h1 { overflow-wrap: anywhere; }
+  .hero-actions .button, .service-hero .button {
+    max-width: 100%;
+    width: fit-content;
+    gap: 14px;
+    padding: 15px 16px;
+    white-space: normal;
+  }
+  .breadcrumbs { line-height: 1.7; }
+  .service-detail-process .process-grid { gap: 28px; }
+  .detail-steps li { grid-template-columns: 34px minmax(0, 1fr); }
+  .faq-item summary { padding-right: 34px; }
+}
