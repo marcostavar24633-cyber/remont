@@ -24,7 +24,8 @@ if (year) {
 }
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
+  if (event.key === 'Escape' && mobileNav?.classList.contains('open')) {
     setMenuOpen(false);
+    toggle?.focus();
   }
 });
