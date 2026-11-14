@@ -10,3 +10,17 @@ a:focus-visible,button:focus-visible{outline:3px solid #d6a16e;outline-offset:4p
 .portfolio-upload-note{display:flex;align-items:center;gap:17px;margin-top:22px;padding:20px 22px;border:1px solid #d1d0c8}.portfolio-upload-note .placeholder-icon{flex:0 0 42px}.portfolio-upload-note b{font-size:12px}.portfolio-upload-note p{font-size:10px;line-height:1.7;color:#777b75;margin:5px 0 0}.mobile-call{display:none}
 @media(max-width:800px){.portfolio-grid{grid-template-columns:1fr 1fr}.portfolio-item-wide{grid-column:1/-1}.portfolio-item-wide img{height:330px}.portfolio-item:not(.portfolio-item-wide) img{height:220px}}
 @media(max-width:560px){.portfolio-intro{display:block}.portfolio-tag{display:block;margin-bottom:10px}.portfolio-grid{grid-template-columns:1fr}.portfolio-item-wide{grid-column:auto}.portfolio-item img,.portfolio-item-wide img,.portfolio-item:not(.portfolio-item-wide) img{height:250px}.portfolio-upload-note{align-items:flex-start;padding:17px}.mobile-call{position:fixed;z-index:9;display:flex;align-items:center;justify-content:center;gap:18px;left:14px;right:14px;bottom:12px;padding:15px 20px;background:#c28d5d;color:#171c18;font-size:12px;font-weight:800;box-shadow:0 8px 30px #0003}.mobile-call span{font-size:17px}.footer{padding-bottom:82px}}
+
+/* Доступность: учитываем системную настройку уменьшения движения и якорную навигацию */
+html { scroll-padding-top: 24px; }
+#services, #approach, #portfolio, #contacts { scroll-margin-top: 24px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-image, .portfolio-item:hover img, .button:hover { transform: none !important; }
+}
