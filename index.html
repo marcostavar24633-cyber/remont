@@ -54,14 +54,30 @@
         <span><b>ДОМ</b><small>УЛЬЯНОВСК</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Основная навигация">
-        <a href="#services">Услуги</a><a href="#approach">Как работаем</a><a href="#portfolio">Работы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="service-menu">Услуги <span aria-hidden="true">⌄</span></button>
+          <div class="nav-dropdown-menu" id="service-menu">
+            <a href="remont-kvartir.html"><span>01</span> Ремонт квартир</a>
+            <a href="otdelka-domov.html"><span>02</span> Отделка домов</a>
+            <a href="otdelka-vannoy.html"><span>03</span> Отделка ванной</a>
+            <a href="remont-sanuzla.html"><span>04</span> Ремонт санузла</a>
+            <a href="otdelochnye-raboty.html"><span>05</span> Отделочные работы</a>
+          </div>
+        </div>
+        <a href="#approach">Подход</a><a href="#portfolio">Пространства</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
       </nav>
       <a class="header-phone" href="tel:+79631282558">+7 963 128-25-58</a>
       <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-navigation" aria-label="Мобильная навигация">
-      <a href="#services">Услуги</a><a href="#approach">Как работаем</a><a href="#portfolio">Работы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
-      <a href="tel:+79631282558">+7 963 128-25-58</a>
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-toggle" type="button" aria-expanded="false" aria-controls="mobile-service-links">Услуги <span aria-hidden="true">＋</span></button>
+        <div class="mobile-service-links" id="mobile-service-links">
+          <a href="remont-kvartir.html">Ремонт квартир</a><a href="otdelka-domov.html">Отделка домов</a><a href="otdelka-vannoy.html">Отделка ванной</a><a href="remont-sanuzla.html">Ремонт санузла</a><a href="otdelochnye-raboty.html">Отделочные работы</a>
+        </div>
+      </div>
+      <a href="#approach">Подход</a><a href="#portfolio">Пространства</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+      <a class="mobile-nav-call" href="tel:+79631282558">Позвонить · +7 963 128-25-58 ↗</a>
     </nav>
   </header>
 
@@ -75,7 +91,7 @@
         <p class="hero-lead">Ремонт квартир, частных домов и помещений в Ульяновске. Позвоните, чтобы обсудить объект, перечень работ и дальнейшие шаги.</p>
         <div class="hero-actions">
           <a class="button button-accent" href="tel:+79631282558">Позвонить и обсудить проект <span>↗</span></a>
-          <a class="text-link" href="#services">Посмотреть услуги <span>↓</span></a>
+          <a class="text-link" href="#project-studio">Подобрать формат работ <span>↓</span></a>
         </div>
         <div class="hero-note"><span class="note-line"></span><span>Квартиры · Дома · Помещения</span></div>
       </div>
@@ -116,14 +132,65 @@
       </div>
     </section>
 
+    <section class="project-studio section-pad" id="project-studio">
+      <div class="container">
+        <div class="studio-heading">
+          <p class="section-kicker">03 / НАЧНИТЕ С ЗАДАЧИ</p>
+          <h2>Соберём контур<br><em>вашего проекта</em></h2>
+          <p>Выберите несколько параметров — и получите краткий план того, что стоит обсудить при звонке. Это не смета и не автоматическое обещание стоимости.</p>
+        </div>
+        <div class="planner-shell">
+          <div class="planner-main">
+            <fieldset class="planner-step">
+              <legend><span>01</span> Что планируете обновить?</legend>
+              <div class="planner-options">
+                <button type="button" data-planner-group="object" data-value="Квартира" aria-pressed="true">Квартиру</button>
+                <button type="button" data-planner-group="object" data-value="Частный дом" aria-pressed="false">Частный дом</button>
+                <button type="button" data-planner-group="object" data-value="Ванная комната" aria-pressed="false">Ванную</button>
+                <button type="button" data-planner-group="object" data-value="Санузел" aria-pressed="false">Санузел</button>
+                <button type="button" data-planner-group="object" data-value="Отдельное помещение" aria-pressed="false">Отдельное помещение</button>
+              </div>
+            </fieldset>
+            <fieldset class="planner-step">
+              <legend><span>02</span> Какой объём работ нужен?</legend>
+              <div class="planner-options">
+                <button type="button" data-planner-group="scope" data-value="Комплексный ремонт" aria-pressed="true">Комплексно</button>
+                <button type="button" data-planner-group="scope" data-value="Отдельные помещения" aria-pressed="false">Несколько помещений</button>
+                <button type="button" data-planner-group="scope" data-value="Отдельные работы" aria-pressed="false">Отдельные работы</button>
+                <button type="button" data-planner-group="scope" data-value="Пока определяюсь" aria-pressed="false">Пока определяюсь</button>
+              </div>
+            </fieldset>
+            <fieldset class="planner-step">
+              <legend><span>03</span> Каково текущее состояние?</legend>
+              <div class="planner-options">
+                <button type="button" data-planner-group="condition" data-value="Новостройка / без отделки" aria-pressed="true">Новостройка</button>
+                <button type="button" data-planner-group="condition" data-value="Вторичное жильё" aria-pressed="false">Вторичное жильё</button>
+                <button type="button" data-planner-group="condition" data-value="Нужно оценить на месте" aria-pressed="false">Нужно оценить</button>
+              </div>
+            </fieldset>
+          </div>
+          <aside class="planner-result" aria-live="polite">
+            <span class="planner-result-label">ВАШ ЧЕРНОВОЙ БРИФ</span>
+            <h3 id="planner-title">Ремонт квартиры</h3>
+            <p id="planner-summary">Комплексный ремонт · Новостройка / без отделки</p>
+            <div class="planner-divider"></div>
+            <p class="planner-hint">При разговоре полезно уточнить:</p>
+            <ul id="planner-checklist"><li>Площадь и планировку объекта</li><li>Состав помещений и работ</li><li>Пожелания к материалам и результату</li></ul>
+            <a class="button button-accent planner-call" href="tel:+79631282558">Обсудить по телефону <span>↗</span></a>
+            <small>Выборы остаются в вашем браузере и никуда не отправляются.</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="approach section-pad" id="approach">
       <div class="container approach-grid">
         <div class="approach-visual">
-          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Современный интерьер гостиной" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Современный интерьер гостиной" tabindex="0" role="button" aria-label="Открыть изображение: Современный интерьер гостиной" width="1200" height="800" loading="lazy" decoding="async">
           <div class="visual-caption"><span>ПРОДУМАННЫЙ ПОДХОД</span><b>От задачи<br>к результату</b></div>
         </div>
         <div class="approach-content">
-          <p class="section-kicker">03 / НАШ ПОДХОД</p>
+          <p class="section-kicker">04 / НАШ ПОДХОД</p>
           <h2>Понятный процесс<br>на каждом <em>этапе</em></h2>
           <p class="approach-desc">Начинаем с разговора о ваших ожиданиях. Затем уточняем детали объекта и согласовываем состав работ.</p>
           <div class="steps">
@@ -139,7 +206,7 @@
     <section class="portfolio section-pad" id="portfolio">
       <div class="container">
         <div class="section-heading">
-          <div><p class="section-kicker">04 / ПОРТФОЛИО</p><h2>Интерьер начинается <em>с идеи</em></h2></div>
+          <div><p class="section-kicker">05 / ПОРТФОЛИО</p><h2>Интерьер начинается <em>с идеи</em></h2></div>
           <p>Подборка интерьерных примеров, которые помогают представить возможные направления отделки.</p>
         </div>
         <div class="portfolio-intro">
@@ -147,10 +214,11 @@
           <p>Фотографии ниже — примеры интерьеров для демонстрации стиля. Это не выполненные объекты компании. После получения ваших снимков заменим их на реальные проекты.</p>
         </div>
         <div class="portfolio-grid">
-          <figure class="portfolio-item portfolio-item-wide"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Пример современного интерьера гостиной" width="1400" height="933" loading="lazy" decoding="async"><figcaption><b>Гостиная</b><span>Пример интерьерного решения</span></figcaption></figure>
-          <figure class="portfolio-item"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Пример современной кухни" width="1000" height="667" loading="lazy" decoding="async"><figcaption><b>Кухня</b><span>Пример интерьерного решения</span></figcaption></figure>
-          <figure class="portfolio-item"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Пример отделки ванной комнаты" width="1000" height="667" loading="lazy" decoding="async"><figcaption><b>Ванная комната</b><span>Пример интерьерного решения</span></figcaption></figure>
+          <figure class="portfolio-item portfolio-item-wide"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Пример современного интерьера гостиной" tabindex="0" role="button" aria-label="Открыть изображение: Пример современного интерьера гостиной" width="1400" height="933" loading="lazy" decoding="async"><figcaption><b>Гостиная</b><span>Пример интерьерного решения</span></figcaption></figure>
+          <figure class="portfolio-item"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Пример современной кухни" tabindex="0" role="button" aria-label="Открыть изображение: Пример современной кухни" width="1000" height="667" loading="lazy" decoding="async"><figcaption><b>Кухня</b><span>Пример интерьерного решения</span></figcaption></figure>
+          <figure class="portfolio-item"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Пример отделки ванной комнаты" tabindex="0" role="button" aria-label="Открыть изображение: Пример отделки ванной комнаты" width="1000" height="667" loading="lazy" decoding="async"><figcaption><b>Ванная комната</b><span>Пример интерьерного решения</span></figcaption></figure>
         </div>
+        <dialog class="gallery-lightbox" aria-label="Просмотр изображения"><button class="gallery-close" type="button" aria-label="Закрыть изображение">×</button><img class="gallery-lightbox-image" alt=""><p class="gallery-lightbox-caption"></p></dialog>
         <div class="portfolio-upload-note"><span class="placeholder-icon">＋</span><div><b>Есть фотографии ваших объектов?</b><p>Добавим реальные работы, подписи и описание выполненных задач. Не будем выдавать чужие интерьеры за проекты компании.</p></div></div>
       </div>
     </section>
@@ -158,7 +226,7 @@
     <section class="faq section-pad" id="faq">
       <div class="container faq-grid">
         <div class="faq-heading">
-          <p class="section-kicker">05 / ЧАСТЫЕ ВОПРОСЫ</p>
+          <p class="section-kicker">06 / ЧАСТЫЕ ВОПРОСЫ</p>
           <h2>Что важно знать<br><em>перед началом</em></h2>
           <p>Коротко отвечаем на основные вопросы о ремонте и отделке в Ульяновске. Детали конкретного объекта обсудим по телефону.</p>
           <a class="button button-accent" href="tel:+79631282558">Задать свой вопрос <span>↗</span></a>
@@ -190,7 +258,7 @@
 
     <section class="cta-band">
       <div class="container cta-inner">
-        <div><p class="section-kicker">06 / ОБСУДИМ ВАШ ПРОЕКТ</p><h2>Готовы обновить<br><em>своё пространство?</em></h2></div>
+        <div><p class="section-kicker">07 / ОБСУДИМ ВАШ ПРОЕКТ</p><h2>Готовы обновить<br><em>своё пространство?</em></h2></div>
         <a class="button button-light" href="tel:+79631282558">Позвонить <span>↗</span></a>
       </div>
     </section>
@@ -198,7 +266,7 @@
     <section class="contacts section-pad" id="contacts">
       <div class="container contacts-grid">
         <div>
-          <p class="section-kicker">07 / КОНТАКТЫ</p>
+          <p class="section-kicker">08 / КОНТАКТЫ</p>
           <h2>Давайте обсудим<br><em>вашу задачу</em></h2>
           <p class="contact-copy">Позвоните, чтобы рассказать о проекте и договориться о следующем шаге.</p>
           <a class="contact-phone" href="tel:+79631282558">+7 963 128-25-58</a>
