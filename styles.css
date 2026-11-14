@@ -511,3 +511,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.portfolio-item img:f
  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
  .reveal{opacity:1;transform:none}
 }
+
+body.navigation-open{overflow:hidden}
+.nav-dropdown-menu a[aria-current=page],.mobile-service-links a[aria-current=page]{color:var(--lux-gold-soft);background:rgba(197,164,119,.1)}
+.mobile-service-links a[aria-current=page]{border-left:2px solid var(--lux-gold);padding-left:12px}
