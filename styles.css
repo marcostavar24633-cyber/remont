@@ -584,3 +584,6 @@ body.navigation-open{overflow:hidden}
 .contact-brief-link span{color:#98764f;font-size:16px}
 .contact-share-hint{margin:14px 0 0;color:var(--lux-muted);font-size:10px;line-height:1.7}
 .contact-brief-link:focus-visible{outline:2px solid #bd9866;outline-offset:3px}
+
+/* Прокрутка к планировщику с учётом закреплённой шапки */
+#project-studio { scroll-margin-top: 90px; }
