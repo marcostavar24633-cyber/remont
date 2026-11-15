@@ -1224,3 +1224,27 @@ input,select,textarea{border-radius:var(--radius-sm)}
  .page-services .detail-card::before{height:205px;margin:0 -22px 22px}
  .page-services .cta-band .cta-inner{display:flex;align-items:flex-start;flex-direction:column}
 }
+
+
+/* Persistent floating navigation — keeps primary actions reachable */
+.header,.service-page .header{
+  position:fixed;
+  top:0;left:0;right:0;
+}
+html{scroll-padding-top:104px}
+#services,#approach,#portfolio,#faq,#contacts,#directions,#what-includes{
+  scroll-margin-top:104px;
+}
+.mobile-nav{
+  max-height:calc(100svh - 72px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+body.navigation-open{overflow:hidden}
+@media(max-width:800px){
+ .header.is-scrolled .nav{height:68px}
+ .mobile-nav{max-height:calc(100svh - 68px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .header,.header .nav{transition:none}
+}
