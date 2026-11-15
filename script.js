@@ -102,10 +102,67 @@
       'Сайт: https://marcostavar24633-cyber.github.io/remont/'
     ].join('\n');
   };
+  const photoInput = document.querySelector('#planner-photos-input');
+  const photoPreview = document.querySelector('#planner-photos-preview');
+  const photoClear = document.querySelector('#planner-photos-clear');
+  const selectedPhotos = [];
+  const revokePhotoUrls = () => selectedPhotos.forEach((photo) => URL.revokeObjectURL(photo.url));
+  const renderPhotoPreviews = () => {
+    if (!photoPreview || !photoClear) return;
+    photoPreview.replaceChildren(...selectedPhotos.map((photo) => {
+      const figure = document.createElement('figure');
+      figure.className = 'planner-photo-item';
+      const image = document.createElement('img');
+      image.src = photo.url;
+      image.alt = photo.file.name;
+      const caption = document.createElement('figcaption');
+      caption.textContent = photo.file.name;
+      figure.append(image, caption);
+      return figure;
+    }));
+    photoClear.hidden = selectedPhotos.length === 0;
+  };
+  photoInput?.addEventListener('change', () => {
+    if (plannerShareStatus) plannerShareStatus.textContent = '';
+    revokePhotoUrls();
+    selectedPhotos.length = 0;
+    const files = Array.from(photoInput.files || []);
+    const valid = files.filter((file) => file.type.startsWith('image/') && file.size <= 10 * 1024 * 1024);
+    if (files.length > 5 || valid.length !== files.length) {
+      if (plannerShareStatus) plannerShareStatus.textContent = 'Можно выбрать до 5 изображений. Каждый файл должен быть не больше 10 МБ. Проверьте выбор.';
+      photoInput.value = '';
+      renderPhotoPreviews();
+      return;
+    }
+    valid.forEach((file) => selectedPhotos.push({ file, url: URL.createObjectURL(file) }));
+    renderPhotoPreviews();
+    if (plannerShareStatus && selectedPhotos.length) plannerShareStatus.textContent = 'Выбрано фотографий: ' + selectedPhotos.length + '. Они не загружаются на сайт.';
+  });
+  photoClear?.addEventListener('click', () => {
+    revokePhotoUrls();
+    selectedPhotos.length = 0;
+    if (photoInput) photoInput.value = '';
+    renderPhotoPreviews();
+    if (plannerShareStatus) plannerShareStatus.textContent = 'Фотографии удалены из брифа.';
+  });
+  window.addEventListener('pagehide', revokePhotoUrls);
+
   plannerShare?.addEventListener('click', async () => {
     const text = buildPlannerBrief();
+    const files = selectedPhotos.map((photo) => photo.file);
     if (plannerShareStatus) plannerShareStatus.textContent = '';
-    if (navigator.share) {
+    if (files.length && navigator.share && navigator.canShare) {
+      try {
+        const shareData = { title: 'Бриф на ремонт — Дом Ульяновск', text, files };
+        if (navigator.canShare({ files })) {
+          await navigator.share(shareData);
+          if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки. Проверьте выбранные фотографии и подтвердите отправку в приложении.';
+          return;
+        }
+      } catch (error) {
+        if (error?.name === 'AbortError') return;
+      }
+    } else if (!files.length && navigator.share) {
       try {
         await navigator.share({ title: 'Бриф на ремонт — Дом Ульяновск', text });
         if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки.';
@@ -116,9 +173,13 @@
     }
     try {
       await navigator.clipboard.writeText(text);
-      if (plannerShareStatus) plannerShareStatus.textContent = 'Бриф скопирован. Вставьте его в удобный мессенджер.';
+      if (plannerShareStatus) plannerShareStatus.textContent = files.length
+        ? 'Текст брифа скопирован. Браузер не поддерживает отправку фотографий из этого окна — прикрепите выбранные изображения вручную в мессенджере.'
+        : 'Бриф скопирован. Вставьте его в удобный мессенджер.';
     } catch {
-      if (plannerShareStatus) plannerShareStatus.textContent = 'Не удалось открыть отправку или скопировать текст. Можно позвонить по кнопке выше.';
+      if (plannerShareStatus) plannerShareStatus.textContent = files.length
+        ? 'Не удалось передать файлы. Позвоните по кнопке выше и прикрепите фотографии вручную в мессенджере.'
+        : 'Не удалось открыть отправку или скопировать текст. Можно позвонить по кнопке выше.';
     }
   });
 
