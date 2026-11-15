@@ -754,3 +754,107 @@ input,select,textarea{border-radius:var(--radius-sm)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+
+/* =========================================================
+   SERVICE PAGES — editorial architectural composition
+   ========================================================= */
+.service-page .service-hero{
+  min-height: min(790px, 92svh);
+  background:var(--night);
+  isolation:isolate;
+}
+.service-page .service-hero-image{
+  transform:scale(1.035);
+  filter:saturate(.78) contrast(1.04);
+  animation:service-image-drift 26s ease-in-out infinite alternate;
+}
+.service-page .service-hero-shade{
+  background:
+    linear-gradient(90deg,rgba(24,25,23,.91) 0%,rgba(24,25,23,.69) 48%,rgba(24,25,23,.18) 100%),
+    linear-gradient(0deg,rgba(20,20,18,.55),transparent 58%);
+}
+.service-page .service-hero-content{padding-top:130px;padding-bottom:78px}
+.service-page .breadcrumbs{
+  display:flex;gap:8px;align-items:center;
+  color:rgba(247,242,233,.68);
+  font-size:10px;letter-spacing:.06em;margin-bottom:54px
+}
+.service-page .breadcrumbs a{color:var(--bronze-light);text-decoration:none}
+.service-page .breadcrumbs a:hover{color:#f0d7bd}
+.service-page .service-hero h1{
+  max-width:900px;font-size:clamp(50px,7.5vw,92px);
+  line-height:1.01;letter-spacing:-.075em;font-weight:500
+}
+.service-page .service-hero h1 em{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  color:var(--bronze-light);font-weight:500
+}
+.service-page .service-hero .hero-lead{max-width:560px;color:rgba(247,242,233,.8);line-height:1.95}
+.service-page .service-detail-intro{background:var(--paper);position:relative}
+.service-page .detail-narrow{max-width:900px}
+.service-page .detail-narrow h2,.service-page .process-grid h2{
+  font-size:clamp(38px,4.8vw,64px);font-weight:500;letter-spacing:-.07em;line-height:1.06
+}
+.service-page .detail-narrow h2 em,.service-page .process-grid h2 em{
+  font-family:"Cormorant Garamond",Georgia,serif;color:var(--clay);font-weight:500
+}
+.service-page .detail-narrow p:not(.section-kicker),.service-page .detail-copy{
+  color:#716b62;font-size:13px;line-height:2;max-width:760px
+}
+.service-page .service-detail-list{background:var(--paper-deep);position:relative}
+.service-page .detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.service-page .detail-card{
+  position:relative;min-height:220px;padding:clamp(25px,3.5vw,40px);
+  background:var(--surface);border:1px solid rgba(65,54,42,.1);
+  border-radius:var(--radius-md);overflow:hidden;
+  transition:transform .45s var(--ease-lux),box-shadow .45s var(--ease-lux),border-color .45s
+}
+.service-page .detail-card::after{
+  content:"";position:absolute;right:-38px;top:-48px;width:116px;height:116px;
+  border:1px solid rgba(167,122,80,.18);border-radius:50%;
+  box-shadow:0 0 0 18px rgba(167,122,80,.035);pointer-events:none
+}
+.service-page .detail-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:rgba(167,122,80,.35)}
+.service-page .detail-card>span{color:var(--bronze);font-size:9px;letter-spacing:.2em}
+.service-page .detail-card h3{font-size:clamp(19px,2vw,24px);font-weight:600;letter-spacing:-.045em;margin:20px 0 12px}
+.service-page .detail-card p{color:#716b62;font-size:12px;line-height:1.9;max-width:560px}
+.service-page .detail-disclaimer{color:#756e64;font-size:10px;line-height:1.9}
+.service-page .service-detail-process{background:var(--surface)}
+.service-page .process-grid{gap:clamp(38px,7vw,104px)}
+.service-page .detail-steps{border-color:var(--line)}
+.service-page .detail-steps li{grid-template-columns:48px 1fr;padding:24px 0;border-color:var(--line)}
+.service-page .detail-steps li>b{color:var(--bronze);font-size:10px;letter-spacing:.12em}
+.service-page .detail-steps h3{font-size:15px;font-weight:700;letter-spacing:-.02em}
+.service-page .detail-steps p{color:#716b62;font-size:12px;line-height:1.9}
+.service-page .service-detail-faq{background:var(--paper)}
+.service-page .faq-item{border-color:var(--line)}
+.service-page .faq-item summary{font-size:14px;font-weight:600}
+.service-page .faq-item p{color:#716b62;line-height:1.9}
+.service-page .cta-band{background:var(--night)}
+.service-page .cta-inner{gap:28px}
+.service-page .button-light{border-radius:999px}
+.service-page .footer{background:#1e201e}
+.service-page .mobile-call{background:var(--bronze-light);color:var(--ink);border-radius:999px}
+@keyframes service-image-drift{
+  from{transform:scale(1.025) translate3d(0,0,0)}
+  to{transform:scale(1.075) translate3d(-.8%,.5%,0)}
+}
+@media(max-width:800px){
+  .service-page .service-hero{min-height:690px}
+  .service-page .service-hero-content{padding-top:112px;padding-bottom:70px}
+  .service-page .breadcrumbs{margin-bottom:38px}
+  .service-page .detail-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .service-page .service-hero{min-height:680px}
+  .service-page .service-hero-content{padding-top:102px;padding-bottom:74px}
+  .service-page .service-hero h1{font-size:clamp(43px,11.5vw,59px)}
+  .service-page .breadcrumbs{margin-bottom:32px;font-size:9px}
+  .service-page .detail-grid{grid-template-columns:1fr}
+  .service-page .detail-card{min-height:0;padding:26px}
+  .service-page .detail-narrow h2,.service-page .process-grid h2{font-size:clamp(36px,10vw,48px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-page .service-hero-image{animation:none;transform:none}
+}
