@@ -85,6 +85,43 @@
   });
   renderPlanner();
 
+  const plannerShare = document.querySelector('#planner-share');
+  const plannerShareStatus = document.querySelector('#planner-share-status');
+  const buildPlannerBrief = () => {
+    const checklist = checklistFor(plannerState.object, plannerState.scope, plannerState.condition);
+    return [
+      'Здравствуйте! Хочу обсудить ремонт / отделку.',
+      '',
+      'Объект: ' + plannerState.object,
+      'Объём работ: ' + plannerState.scope,
+      'Состояние: ' + plannerState.condition,
+      '',
+      'Что нужно уточнить:',
+      ...checklist.map((item) => '— ' + item),
+      '',
+      'Сайт: https://marcostavar24633-cyber.github.io/remont/'
+    ].join('\\n');
+  };
+  plannerShare?.addEventListener('click', async () => {
+    const text = buildPlannerBrief();
+    if (plannerShareStatus) plannerShareStatus.textContent = '';
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'Бриф на ремонт — Дом Ульяновск', text });
+        if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки.';
+        return;
+      } catch (error) {
+        if (error?.name === 'AbortError') return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      if (plannerShareStatus) plannerShareStatus.textContent = 'Бриф скопирован. Вставьте его в удобный мессенджер.';
+    } catch {
+      if (plannerShareStatus) plannerShareStatus.textContent = 'Не удалось открыть отправку или скопировать текст. Можно позвонить по кнопке выше.';
+    }
+  });
+
   const gallery = document.querySelector('.gallery-lightbox');
   const galleryImage = gallery?.querySelector('.gallery-lightbox-image');
   const galleryCaption = gallery?.querySelector('.gallery-lightbox-caption');
