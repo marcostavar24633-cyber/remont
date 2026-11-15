@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#202721"/><path d="M10 53V11h9v34h35v8H10z" fill="#d4a16f"/><path d="M24 11h9v34h-9z" fill="#f5f4f0"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Дом Ульяновск">
+  <rect width="64" height="64" rx="14" fill="#242522"/>
+  <path d="M12 49 23 15h18l11 34" fill="none" stroke="#c49b73" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 40h26M16 49h32" fill="none" stroke="#c49b73" stroke-width="2" stroke-linecap="round"/>
+  <path d="M27 24v16m10-16v16" fill="none" stroke="#f2eee7" stroke-width="2" stroke-linecap="round"/>
+</svg>
