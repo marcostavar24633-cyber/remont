@@ -73,6 +73,13 @@
     }));
   });
 
+  document.querySelectorAll('a[href*="#contacts"],a[href*="#project-studio"]').forEach((link) => {
+    link.addEventListener('click', () => trackEvent('contact_cta_click', {
+      page_path: window.location.pathname,
+      destination: link.href.includes('#project-studio') ? 'project_planner' : 'contacts'
+    }));
+  });
+
   const plannerState = { object: 'Квартира', scope: 'Комплексный ремонт', condition: 'Новостройка / без отделки' };
   const plannerTitle = document.querySelector('#planner-title');
   const plannerSummary = document.querySelector('#planner-summary');
