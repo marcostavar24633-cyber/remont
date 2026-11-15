@@ -534,3 +534,29 @@ body.navigation-open{overflow:hidden}
 .not-found-home:hover{background:#d8a879}
 .not-found-phone:hover{border-color:#d8a879;color:#d8a879}
 @media(max-width:480px){.not-found-actions{align-items:stretch;flex-direction:column}.not-found-home,.not-found-phone{width:100%}}
+
+
+/* Mobile usability: larger touch targets and safe-area spacing */
+@media (max-width: 560px) {
+  .menu-toggle {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  .mobile-nav-group-toggle,
+  .mobile-nav > a {
+    min-height: 48px;
+  }
+  .planner-options button {
+    min-height: 44px;
+  }
+  .planner-share {
+    min-height: 48px;
+  }
+  .mobile-call {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    min-height: 54px;
+  }
+  .footer {
+    padding-bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+  }
+}
