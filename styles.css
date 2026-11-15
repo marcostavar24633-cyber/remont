@@ -1500,3 +1500,26 @@ body.navigation-open{overflow:hidden}
  .portfolio-grid{grid-auto-rows:auto}
  .portfolio-item,.portfolio-item img{min-height:230px}
 }
+
+
+/* Editorial reveal rhythm and catalog-specific image distinction */
+.intro-grid>.reveal,.section-heading.reveal,.studio-heading.reveal,
+.process-grid>div.reveal,.cta-inner>div.reveal{
+  transition-delay:.04s;
+}
+.detail-grid .detail-card:nth-child(2){transition-delay:.08s}
+.detail-grid .detail-card:nth-child(3){transition-delay:.14s}
+.detail-grid .detail-card:nth-child(4){transition-delay:.2s}
+.detail-grid .detail-card:nth-child(5){transition-delay:.26s}
+.page-services .detail-card:nth-child(4)::before{
+  background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card:nth-child(5)::before{
+  background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card:nth-child(4)::after,
+.page-services .detail-card:nth-child(5)::after{opacity:.75}
+@media(prefers-reduced-motion:reduce){
+ .intro-grid>.reveal,.section-heading.reveal,.studio-heading.reveal,
+ .process-grid>div.reveal,.cta-inner>div.reveal{transition:none}
+}
