@@ -80,13 +80,19 @@
     }));
   });
 
-  const plannerState = { object: 'Квартира', scope: 'Комплексный ремонт', condition: 'Новостройка / без отделки' };
+  const plannerObjectOptions = [...document.querySelectorAll('[data-planner-group="object"]')].map((button) => button.dataset.value);
+  const requestedObject = new URLSearchParams(window.location.search).get('object');
+  const plannerState = {
+    object: plannerObjectOptions.includes(requestedObject) ? requestedObject : 'Квартира',
+    scope: 'Комплексный ремонт',
+    condition: 'Новостройка / без отделки'
+  };
   const plannerTitle = document.querySelector('#planner-title');
   const plannerSummary = document.querySelector('#planner-summary');
   const plannerChecklist = document.querySelector('#planner-checklist');
   const checklistFor = (object, scope, condition) => {
     const base = ['Площадь и планировку объекта', 'Состав помещений и работ', 'Пожелания к материалам и результату'];
-    if (object === 'Ванная комната' || object === 'Санузел') return ['Размеры и текущее состояние помещения', 'Сантехнику, коммуникации и отделку', 'Материалы и желаемый результат'];
+    if (object === 'Ванная комната' || object === 'Санузел') return ['Размеры и текущее состояние помещения', 'Состояние поверхностей и существующая отделка', 'Материалы и желаемый результат'];
     if (object === 'Частный дом') return ['Площадь и состояние дома', 'Какие помещения и зоны входят в задачу', 'Материалы, этапность и доступ к объекту'];
     if (scope === 'Отдельные работы') return ['Какие конкретно работы нужны', 'Состояние поверхностей и основания', 'Необходимые материалы и подготовку'];
     if (condition === 'Вторичное жильё') return ['Что требуется демонтировать или сохранить', 'Состояние инженерных систем и отделки', 'Порядок работ и подготовку помещений'];
@@ -108,6 +114,10 @@
       document.querySelectorAll('[data-planner-group="' + group + '"]').forEach((option) => option.setAttribute('aria-pressed', String(option === button)));
       renderPlanner();
     });
+  });
+  document.querySelectorAll('[data-planner-group]').forEach((button) => {
+    const group = button.dataset.plannerGroup;
+    button.setAttribute('aria-pressed', String(button.dataset.value === plannerState[group]));
   });
   renderPlanner();
 
