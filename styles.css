@@ -1278,7 +1278,7 @@ body.navigation-open{overflow:hidden}
 .services .service-card:hover .service-photo{transform:scale(1.055);filter:saturate(1)}
 .services .service-info{
   position:absolute;z-index:2;left:0;right:0;bottom:0;
-  display:flex;align-items:flex-start;justify-content:flex-end;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
   padding:clamp(24px,3.5vw,42px);color:#fff;
 }
 .services .service-info>span{color:var(--bronze-light);font-size:9px;letter-spacing:.22em}
