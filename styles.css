@@ -1119,3 +1119,43 @@ input,select,textarea{border-radius:var(--radius-sm)}
  .mobile-nav.open{animation:none}
  .hero-image,.service-hero-image{animation:none}
 }
+
+
+/* Architectural graphic language: quiet grids, drafting lines, depth */
+.hero,.service-hero{isolation:isolate}
+.hero::before,.service-hero::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent calc(50% - .5px),rgba(236,220,198,.11) 50%,transparent calc(50% + .5px)),
+    linear-gradient(0deg,transparent calc(72% - .5px),rgba(236,220,198,.09) 72%,transparent calc(72% + .5px));
+  opacity:.45;
+  mask-image:linear-gradient(90deg,black,transparent 78%);
+}
+.hero::after,.service-hero::after{
+  content:"";position:absolute;z-index:1;pointer-events:none;
+  width:min(52vw,680px);aspect-ratio:1;right:-13%;top:13%;
+  border:1px solid rgba(218,190,159,.2);border-radius:50%;
+  box-shadow:0 0 0 34px rgba(218,190,159,.035),0 0 0 68px rgba(218,190,159,.025),0 0 0 102px rgba(218,190,159,.018);
+  opacity:.8;
+}
+.hero-content,.service-hero-content,.hero-counter{position:relative;z-index:2}
+.hero-note{position:relative;z-index:2}
+.section-kicker{display:flex;align-items:center;gap:12px}
+.section-kicker::before{content:"";display:inline-block;width:24px;height:1px;background:var(--bronze);opacity:.8}
+.section-heading{position:relative}
+.section-heading::after{
+  content:"";position:absolute;right:0;top:4px;width:44px;height:44px;
+  border-top:1px solid rgba(167,122,80,.35);border-right:1px solid rgba(167,122,80,.35);
+  pointer-events:none;
+}
+.service-page .service-hero::after{right:-10%;top:18%;width:min(48vw,620px)}
+.service-page .service-hero::before{opacity:.38}
+@media(max-width:800px){
+ .hero::after,.service-hero::after{width:72vw;right:-34%;top:25%;opacity:.5}
+ .section-heading::after{width:28px;height:28px}
+}
+@media(max-width:560px){
+ .hero::before,.service-hero::before{opacity:.22}
+ .hero::after,.service-hero::after{width:85vw;right:-48%;top:32%;opacity:.35}
+ .section-heading::after{display:none}
+}
