@@ -576,3 +576,11 @@ body.navigation-open{overflow:hidden}
 .planner-photos-clear{min-height:44px;margin-top:10px;padding:9px 14px;border:1px solid rgba(151,119,79,.45);border-radius:999px;background:transparent;color:var(--lux-ink);font:700 9px Manrope,sans-serif;cursor:pointer}
 .planner-photos-clear[hidden]{display:none}
 .planner-photos-input:focus-visible,.planner-photos-clear:focus-visible{outline:2px solid #bd9866;outline-offset:3px}
+
+
+/* Clear contact paths: direct call or guided project brief */
+.contact-brief-link{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;margin-top:12px;padding:15px 19px;border:1px solid rgba(151,119,79,.55);border-radius:999px;color:var(--lux-ink);font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;transition:background .25s,border-color .25s,transform .25s}
+.contact-brief-link:hover{background:rgba(197,164,119,.13);border-color:var(--lux-gold);transform:translateY(-2px)}
+.contact-brief-link span{color:#98764f;font-size:16px}
+.contact-share-hint{margin:14px 0 0;color:var(--lux-muted);font-size:10px;line-height:1.7}
+.contact-brief-link:focus-visible{outline:2px solid #bd9866;outline-offset:3px}
