@@ -1043,3 +1043,21 @@ input,select,textarea{border-radius:var(--radius-sm)}
  .planner-options button{flex:1 1 auto}
  .portfolio-item{border-radius:12px}
 }
+
+
+/* Header and architectural framing refinements */
+.header.is-scrolled{background:rgba(36,37,34,.96);border-bottom-color:rgba(196,155,115,.2);box-shadow:0 14px 36px rgba(0,0,0,.2)}
+.header.is-scrolled .nav-dropdown-menu{background:rgba(36,37,34,.98)}
+.header .brand,.header .desktop-nav,.header .header-phone,.header .nav-dropdown-toggle{color:#f4eee4}
+.header .brand-mark{color:var(--bronze-light);border-color:var(--bronze-light)}
+.header .desktop-nav a[aria-current="page"]{color:var(--bronze-light)}
+.hero,.service-page .service-hero{isolation:isolate}
+.hero::after,.service-page .service-hero::after{
+ content:"";position:absolute;z-index:1;inset:22px 24px;border:1px solid rgba(232,211,185,.17);pointer-events:none
+}
+.hero-content,.service-hero-content,.hero-counter{z-index:2}
+.hero-shade,.service-hero-shade{background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),rgba(236,220,199,.035) 25%),linear-gradient(90deg,rgba(24,25,23,.88) 0%,rgba(24,25,23,.66) 42%,rgba(24,25,23,.12) 100%),linear-gradient(0deg,rgba(20,20,18,.52),transparent 54%)}
+.service-page .service-hero-shade{background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),rgba(236,220,199,.035) 25%),linear-gradient(90deg,rgba(25,26,23,.9),rgba(25,26,23,.64) 49%,rgba(25,26,23,.16)),linear-gradient(0deg,rgba(22,22,20,.48),transparent 58%)}
+@media(max-width:640px){
+ .hero::after,.service-page .service-hero::after{inset:12px;border-color:rgba(232,211,185,.13)}
+}
