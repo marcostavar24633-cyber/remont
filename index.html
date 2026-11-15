@@ -178,6 +178,13 @@
             <p class="planner-hint">При разговоре полезно уточнить:</p>
             <ul id="planner-checklist"><li>Площадь и планировку объекта</li><li>Состав помещений и работ</li><li>Пожелания к материалам и результату</li></ul>
             <a class="button button-accent planner-call" href="tel:+79631282558">Обсудить по телефону <span>↗</span></a>
+            <div class="planner-photos">
+              <label class="planner-photos-label" for="planner-photos-input">Фотографии объекта <span>необязательно · до 5 изображений</span></label>
+              <input id="planner-photos-input" class="planner-photos-input" type="file" accept="image/*" multiple aria-describedby="planner-photos-help planner-share-status">
+              <p class="planner-photos-help" id="planner-photos-help">Выберите до 5 фотографий размером не более 10 МБ каждая. Файлы останутся на вашем устройстве до выбора приложения для отправки.</p>
+              <div class="planner-photos-preview" id="planner-photos-preview" aria-label="Предпросмотр выбранных фотографий"></div>
+              <button class="planner-photos-clear" id="planner-photos-clear" type="button" hidden>Убрать все фотографии</button>
+            </div>
             <button class="planner-share" id="planner-share" type="button">Поделиться брифом <span aria-hidden="true">↗</span></button>
             <p class="planner-share-status" id="planner-share-status" role="status" aria-live="polite"></p>
             <small>Бриф формируется на вашем устройстве. Никакие данные автоматически не отправляются.</small>
