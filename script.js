@@ -1,4 +1,11 @@
 (() => {
+  // События для подключения аналитики через Google Tag Manager.
+  // Пока счётчики не установлены, события остаются локальными в dataLayer.
+  window.dataLayer = window.dataLayer || [];
+  const trackEvent = (event, parameters = {}) => {
+    window.dataLayer.push({ event, ...parameters });
+  };
+
   const header = document.querySelector('.header');
   const toggle = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
@@ -17,7 +24,11 @@
     if (open) mobileGroupToggle?.focus();
     else toggle.focus();
   };
-  toggle?.addEventListener('click', () => setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  toggle?.addEventListener('click', () => {
+    const opening = toggle.getAttribute('aria-expanded') !== 'true';
+    setMenuOpen(opening);
+    if (opening) trackEvent('mobile_menu_open');
+  });
   mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
   dropdownToggle?.addEventListener('click', () => {
     const open = dropdownToggle.getAttribute('aria-expanded') !== 'true';
@@ -55,6 +66,13 @@
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.addEventListener('click', () => trackEvent('phone_click', {
+      page_path: window.location.pathname,
+      link_location: link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'content'
+    }));
+  });
+
   const plannerState = { object: 'Квартира', scope: 'Комплексный ремонт', condition: 'Новостройка / без отделки' };
   const plannerTitle = document.querySelector('#planner-title');
   const plannerSummary = document.querySelector('#planner-summary');
@@ -79,6 +97,7 @@
     button.addEventListener('click', () => {
       const group = button.dataset.plannerGroup;
       plannerState[group] = button.dataset.value;
+      trackEvent('planner_option_select', { option_group: group, option_value: button.dataset.value });
       document.querySelectorAll('[data-planner-group="' + group + '"]').forEach((option) => option.setAttribute('aria-pressed', String(option === button)));
       renderPlanner();
     });
@@ -135,12 +154,14 @@
       return;
     }
     valid.forEach((file) => selectedPhotos.push({ file, url: URL.createObjectURL(file) }));
+    trackEvent('planner_photos_select', { photo_count: selectedPhotos.length });
     renderPhotoPreviews();
     if (plannerShareStatus && selectedPhotos.length) plannerShareStatus.textContent = 'Выбрано фотографий: ' + selectedPhotos.length + '. Они не загружаются на сайт.';
   });
   photoClear?.addEventListener('click', () => {
     revokePhotoUrls();
     selectedPhotos.length = 0;
+    trackEvent('planner_photos_clear');
     if (photoInput) photoInput.value = '';
     renderPhotoPreviews();
     if (plannerShareStatus) plannerShareStatus.textContent = 'Фотографии удалены из брифа.';
@@ -156,6 +177,7 @@
         const shareData = { title: 'Бриф на ремонт — Дом Ульяновск', text, files };
         if (navigator.canShare({ files })) {
           await navigator.share(shareData);
+          trackEvent('planner_share_complete', { share_method: 'native_share', photo_count: files.length });
           if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки. Проверьте выбранные фотографии и подтвердите отправку в приложении.';
           return;
         }
@@ -165,6 +187,7 @@
     } else if (!files.length && navigator.share) {
       try {
         await navigator.share({ title: 'Бриф на ремонт — Дом Ульяновск', text });
+        trackEvent('planner_share_complete', { share_method: 'native_share', photo_count: 0 });
         if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки.';
         return;
       } catch (error) {
@@ -173,6 +196,7 @@
     }
     try {
       await navigator.clipboard.writeText(text);
+      trackEvent('planner_share_complete', { share_method: 'clipboard', photo_count: files.length });
       if (plannerShareStatus) plannerShareStatus.textContent = files.length
         ? 'Текст брифа скопирован. Браузер не поддерживает отправку фотографий из этого окна — прикрепите выбранные изображения вручную в мессенджере.'
         : 'Бриф скопирован. Вставьте его в удобный мессенджер.';
@@ -194,7 +218,10 @@
     galleryImage.src = image.currentSrc || image.src;
     galleryImage.alt = image.alt;
     if (galleryCaption) galleryCaption.textContent = image.alt;
-    if (typeof gallery.showModal === 'function') gallery.showModal();
+    if (typeof gallery.showModal === 'function') {
+      gallery.showModal();
+      trackEvent('portfolio_image_open');
+    }
   };
   document.querySelectorAll('.portfolio-grid img[role="button"]').forEach((image) => {
     image.addEventListener('click', () => openGallery(image));
@@ -205,6 +232,11 @@
   galleryClose?.addEventListener('click', () => gallery.close());
   gallery?.addEventListener('click', (event) => { if (event.target === gallery) gallery.close(); });
   gallery?.addEventListener('close', () => lastGalleryTrigger?.focus());
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (item.open) trackEvent('faq_open');
+    });
+  });
 
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries, currentObserver) => {
