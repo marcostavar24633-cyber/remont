@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 
 PAGES = [
     "index.html",
+    "uslugi.html",
     "remont-kvartir.html",
     "otdelka-vannoy.html",
     "otdelka-domov.html",
@@ -109,8 +110,8 @@ if not js.exists() or not js.read_text(encoding="utf-8").strip():
 
 sitemap = ET.parse("sitemap.xml")
 locs = [node.text for node in sitemap.findall(".//{*}loc")]
-if len(locs) != 6:
-    errors.append(f"sitemap.xml: expected 6 URLs, found {len(locs)}")
+if len(locs) != len(PAGES):
+    errors.append(f"sitemap.xml: expected {len(PAGES)} URLs, found {len(locs)}")
 
 home = Path("index.html").read_text(encoding="utf-8")
 groups = set(re.findall(r'data-planner-group="([^"]+)"', home))
