@@ -1551,9 +1551,7 @@ body.navigation-open{overflow:hidden}
   font-size:17px;
 }
 @media(max-width:1100px){
-  .hero-index{right:28px;width:245px;padding:20px}
-  .hero-content{max-width:760px}
-  .hero h1{max-width:720px}
+  .hero-index{display:none}
 }
 @media(max-width:900px){
   .hero-index{display:none}
