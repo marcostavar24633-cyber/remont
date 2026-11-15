@@ -100,7 +100,7 @@
       ...checklist.map((item) => '— ' + item),
       '',
       'Сайт: https://marcostavar24633-cyber.github.io/remont/'
-    ].join('\\n');
+    ].join('\n');
   };
   plannerShare?.addEventListener('click', async () => {
     const text = buildPlannerBrief();
