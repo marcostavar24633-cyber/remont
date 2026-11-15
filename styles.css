@@ -518,3 +518,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.portfolio-item img:f
 body.navigation-open{overflow:hidden}
 .nav-dropdown-menu a[aria-current=page],.mobile-service-links a[aria-current=page]{color:var(--lux-gold-soft);background:rgba(197,164,119,.1)}
 .mobile-service-links a[aria-current=page]{border-left:2px solid var(--lux-gold);padding-left:12px}
+
+
+/* Branded GitHub Pages 404 */
+.not-found-page{min-height:100vh;display:grid;place-items:center;padding:40px 20px;background:radial-gradient(circle at 80% 15%,rgba(190,145,99,.16),transparent 34%),#202521;color:#f5f4f0}
+.not-found-card{width:min(680px,100%);text-align:center;padding:clamp(28px,6vw,64px);border:1px solid rgba(215,174,128,.28);background:rgba(255,255,255,.035)}
+.not-found-mark{width:54px;height:54px;margin:0 auto 28px;border:1px solid #c79560;display:grid;place-items:center;color:#d9a875;font-size:28px;font-weight:800}
+.not-found-code{margin:0 0 14px;color:#d9a875;font-size:11px;font-weight:800;letter-spacing:.24em}
+.not-found-card h1{margin:0;font-size:clamp(38px,8vw,66px);line-height:1.05;letter-spacing:-.055em;font-weight:600}
+.not-found-card h1 em{font-family:Georgia,serif;font-weight:400;color:#d4a16f}
+.not-found-copy{max-width:440px;margin:22px auto 30px;color:#d0d2cc;font-size:14px;line-height:1.8}
+.not-found-actions{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.not-found-home{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:16px 22px;background:#c28d5d;color:#171c18;font-size:12px;font-weight:800}
+.not-found-phone{padding:15px 18px;border:1px solid rgba(255,255,255,.28);color:#f5f4f0;font-size:12px;font-weight:700}
+.not-found-home:hover{background:#d8a879}
+.not-found-phone:hover{border-color:#d8a879;color:#d8a879}
+@media(max-width:480px){.not-found-actions{align-items:stretch;flex-direction:column}.not-found-home,.not-found-phone{width:100%}}
