@@ -1302,3 +1302,17 @@ body.navigation-open{overflow:hidden}
  .services .service-info h3{font-size:25px}
  .services .service-info p{font-size:11px}
 }
+
+
+/* Final layout correction for the image-led homepage service cards */
+.services .service-info{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-end;
+  gap:0;
+}
+.services .service-info>span{margin-bottom:2px}
+.services .service-info h3{margin:10px 0 8px}
+.services .service-info p{margin:0}
+.services .service-info .service-more{margin-top:15px}
