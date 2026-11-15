@@ -1159,3 +1159,68 @@ input,select,textarea{border-radius:var(--radius-sm)}
  .hero::after,.service-hero::after{width:85vw;right:-48%;top:32%;opacity:.35}
  .section-heading::after{display:none}
 }
+
+
+/* Catalog — visual selection cards with distinct architectural imagery */
+.page-services .service-hero-image{
+  background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80');
+  background-position:center 56%;
+}
+.page-services .detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.page-services .detail-card{
+  display:flex;
+  flex-direction:column;
+  min-height:390px;
+  padding:0 25px 27px;
+  overflow:hidden;
+}
+.page-services .detail-card::before{
+  content:"";
+  display:block;
+  height:190px;
+  margin:0 -25px 25px;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(.82);
+  transition:transform .8s var(--ease-lux),filter .8s var(--ease-lux);
+}
+.page-services .detail-card:hover::before{transform:scale(1.035);filter:saturate(1)}
+.page-services .detail-card:nth-child(1)::before{
+  background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card:nth-child(2)::before{
+  background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card:nth-child(3)::before{
+  background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card:nth-child(4)::before{
+  background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card:nth-child(5)::before{
+  background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=78')
+}
+.page-services .detail-card>span{display:block;margin-bottom:5px}
+.page-services .detail-card h3{margin:10px 0 9px}
+.page-services .detail-card p{flex:1}
+.page-services .detail-card .service-more{margin-top:20px}
+.page-services .section-heading{align-items:end}
+.page-services .service-detail-process{background:var(--surface)}
+.page-services .cta-band .cta-inner{display:grid;grid-template-columns:1fr auto auto;align-items:center}
+@media(max-width:900px){
+ .page-services .detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page-services .detail-card{min-height:370px}
+ .page-services .cta-band .cta-inner{grid-template-columns:1fr auto}
+ .page-services .cta-band .cta-inner>div{grid-column:1/-1}
+}
+@media(max-width:600px){
+ .page-services .detail-grid{grid-template-columns:1fr}
+ .page-services .detail-card{min-height:0;padding:0 22px 24px}
+ .page-services .detail-card::before{height:205px;margin:0 -22px 22px}
+ .page-services .cta-band .cta-inner{display:flex;align-items:flex-start;flex-direction:column}
+}
