@@ -551,3 +551,124 @@ html{scroll-behavior:smooth}
   .portfolio{background:linear-gradient(145deg,#d0cdc3,#d8d5cc)}
   .cta-band{background:linear-gradient(145deg,#8c897d,#858477)}
 }
+
+/* Refined tactile button interactions — soft lift, warm sheen, clear focus */
+:root{
+  --button-ease:cubic-bezier(.2,.75,.25,1);
+}
+.button,
+button,
+a.button-accent,
+a.button-light,
+.hero-actions .button-accent,
+.faq-heading .button-accent,
+.contact-panel .button-accent,
+.cta-band .button-light,
+.planner-options button,
+.menu-toggle{
+  -webkit-tap-highlight-color:transparent;
+}
+.button-accent,
+.button-light,
+.hero-actions .text-link,
+.contact-brief-link,
+.service-more,
+.planner-options button,
+.nav-dropdown-toggle,
+.menu-toggle{
+  transition:
+    color .3s var(--button-ease),
+    background-color .35s var(--button-ease),
+    border-color .35s var(--button-ease),
+    box-shadow .4s var(--button-ease),
+    transform .4s var(--button-ease),
+    filter .4s var(--button-ease);
+}
+.button-accent,
+.faq-heading .button-accent,
+.contact-panel .button-accent,
+.hero-actions .button-accent{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  box-shadow:0 7px 20px rgba(25,29,23,.12),inset 0 1px rgba(255,255,255,.3);
+}
+.button-accent::before,
+.faq-heading .button-accent::before,
+.contact-panel .button-accent::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-2px auto -2px -55%;
+  width:42%;
+  transform:skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);
+  transition:left .7s var(--button-ease);
+  pointer-events:none;
+}
+.button-accent:hover,
+.faq-heading .button-accent:hover,
+.contact-panel .button-accent:hover,
+.hero-actions .button-accent:hover{
+  transform:translateY(-3px);
+  filter:brightness(1.035);
+  box-shadow:0 13px 28px rgba(25,29,23,.2),inset 0 1px rgba(255,255,255,.42);
+}
+.button-accent:hover::before,
+.faq-heading .button-accent:hover::before,
+.contact-panel .button-accent:hover::before{left:120%}
+.button-accent:active,
+.faq-heading .button-accent:active,
+.contact-panel .button-accent:active,
+.hero-actions .button-accent:active{
+  transform:translateY(0) scale(.985);
+  box-shadow:0 3px 10px rgba(25,29,23,.14);
+}
+.button-light:hover,.cta-band .button-light:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(27,30,25,.18);
+}
+.button-light:active,.cta-band .button-light:active{transform:scale(.985)}
+.planner-options button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+.planner-options button:active{transform:scale(.98)}
+.hero-actions .text-link,
+.contact-brief-link,
+.service-more{transition:color .3s var(--button-ease),gap .3s var(--button-ease)}
+.hero-actions .text-link:hover,.contact-brief-link:hover,.service-more:hover{gap:15px}
+.nav-dropdown-toggle:hover{color:var(--cin-brass-light)}
+.menu-toggle:hover{transform:scale(1.04)}
+.button-accent:focus-visible,
+.button-light:focus-visible,
+.hero-actions .text-link:focus-visible,
+.contact-brief-link:focus-visible,
+.service-more:focus-visible,
+.planner-options button:focus-visible,
+.nav-dropdown-toggle:focus-visible,
+.menu-toggle:focus-visible{
+  outline:2px solid #b99c76;
+  outline-offset:4px;
+  box-shadow:0 0 0 6px rgba(185,156,118,.16);
+}
+@media(hover:none){
+  .button-accent:hover,.button-light:hover,.hero-actions .button-accent:hover,
+  .faq-heading .button-accent:hover,.contact-panel .button-accent:hover{
+    transform:none;filter:none;box-shadow:0 7px 20px rgba(25,29,23,.12);
+  }
+  .button-accent:hover::before,.faq-heading .button-accent:hover::before,
+  .contact-panel .button-accent:hover::before{left:-55%}
+}
+@media(prefers-reduced-motion:reduce){
+  .button,.button-accent,.button-light,.hero-actions .text-link,
+  .contact-brief-link,.service-more,.planner-options button,
+  .nav-dropdown-toggle,.menu-toggle,
+  .button-accent::before,.faq-heading .button-accent::before,
+  .contact-panel .button-accent::before{
+    transition:none!important;
+  }
+  .button-accent:hover,.button-light:hover,.hero-actions .button-accent:hover,
+  .faq-heading .button-accent:hover,.contact-panel .button-accent:hover,
+  .planner-options button:hover{transform:none!important}
+}
