@@ -672,3 +672,58 @@ a.button-light,
   .faq-heading .button-accent:hover,.contact-panel .button-accent:hover,
   .planner-options button:hover{transform:none!important}
 }
+
+
+/* Editorial typography refresh — DM Sans + Playfair Display */
+:root{
+  --font-ui:"DM Sans",Arial,sans-serif;
+  --font-editorial:"Playfair Display",Georgia,serif;
+}
+body{font-family:var(--font-ui)}
+.hero h1,.intro h2,.section-heading h2,.studio-heading h2,
+.approach h2,.faq-heading h2,.contacts h2,.cta-band h2,
+.service-info h3,.portfolio-item figcaption b,.planner-result h3,
+.contact-panel h3,.contact-phone{
+  font-family:var(--font-editorial);
+  font-weight:500;
+}
+.intro h2 em,.section-heading h2 em,.studio-heading h2 em,
+.approach h2 em,.faq-heading h2 em,.contacts h2 em,.cta-band h2 em{
+  font-family:var(--font-editorial);
+  font-style:italic;
+  font-weight:400;
+}
+.section-kicker,.eyebrow,.hero-note,.portfolio-tag,.panel-label{
+  font-family:var(--font-ui);
+}
+
+/* Text reveals — quiet editorial lift, separate from block entrances */
+.reveal-text{
+  opacity:0;
+  transform:translate3d(0,16px,0);
+  filter:blur(3px);
+  transition:opacity .72s var(--cin-ease),transform .82s var(--cin-ease),filter .82s var(--cin-ease);
+  transition-delay:var(--text-delay,0ms);
+  will-change:opacity,transform,filter;
+}
+.reveal-text.is-visible{
+  opacity:1;transform:translate3d(0,0,0);filter:blur(0);
+}
+.reveal-text em{
+  display:inline-block;
+  opacity:0;
+  transform:translate3d(0,9px,0);
+  transition:opacity .8s var(--cin-ease) .12s,transform .9s var(--cin-ease) .12s;
+}
+.reveal-text.is-visible em{opacity:1;transform:translate3d(0,0,0)}
+.section-heading h2.reveal-text{--text-delay:60ms}
+.intro-copy.reveal-text,.studio-heading>p.reveal-text{--text-delay:150ms}
+.faq-heading>p.reveal-text,.contact-copy.reveal-text{--text-delay:140ms}
+.service-info h3.reveal-text{--text-delay:70ms}
+.service-info p.reveal-text{--text-delay:140ms}
+@media(prefers-reduced-motion:reduce){
+  .reveal-text,.reveal-text.is-visible,.reveal-text em{
+    opacity:1!important;transform:none!important;filter:none!important;
+    transition:none!important;will-change:auto!important
+  }
+}
