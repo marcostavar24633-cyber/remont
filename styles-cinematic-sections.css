@@ -354,3 +354,75 @@ html{scroll-behavior:smooth}
   .portfolio-item figcaption b{font-size:23px}
   .contact-panel h3{font-size:28px}
 }
+
+
+/* Cinematic entrances — soft mask reveals, staggered editorial rhythm */
+.reveal{
+  opacity:0;
+  transform:translate3d(0,34px,0);
+  filter:blur(5px);
+  transition:opacity .85s var(--cin-ease),transform .95s var(--cin-ease),filter .95s var(--cin-ease);
+  transition-delay:var(--reveal-delay,0ms);
+  will-change:opacity,transform,filter;
+}
+.reveal.is-visible{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+/* Services arrive one by one */
+.services .service-card:nth-child(1){--reveal-delay:0ms}
+.services .service-card:nth-child(2){--reveal-delay:120ms}
+.services .service-card:nth-child(3){--reveal-delay:240ms}
+.services .service-card:nth-child(4){--reveal-delay:360ms}
+/* Process steps form a deliberate cascade */
+.steps .step:nth-child(1){--reveal-delay:0ms}
+.steps .step:nth-child(2){--reveal-delay:110ms}
+.steps .step:nth-child(3){--reveal-delay:220ms}
+.steps .step:nth-child(4){--reveal-delay:330ms}
+.steps .step{transition-delay:var(--reveal-delay,0ms)}
+/* Gallery: staggered reveal and subtly sculpted photo silhouettes */
+.portfolio-grid .portfolio-item:nth-child(1){--reveal-delay:0ms}
+.portfolio-grid .portfolio-item:nth-child(2){--reveal-delay:140ms}
+.portfolio-grid .portfolio-item:nth-child(3){--reveal-delay:280ms}
+.portfolio-item{border-radius:2px 54px 2px 2px}
+.portfolio-item:nth-child(2){border-radius:48px 2px 2px 2px}
+.portfolio-item:nth-child(3){border-radius:2px 2px 48px 2px}
+.portfolio-item img{border-radius:inherit}
+.portfolio-item.reveal{clip-path:inset(0 0 13% 0 round 2px 54px 2px 2px);transition:opacity .9s var(--cin-ease),transform .95s var(--cin-ease),filter .95s var(--cin-ease),clip-path 1.1s var(--cin-ease)}
+.portfolio-item.reveal.is-visible{clip-path:inset(0 0 0 0 round 2px 54px 2px 2px)}
+.portfolio-item:nth-child(2).reveal{clip-path:inset(0 0 13% 0 round 48px 2px 2px 2px)}
+.portfolio-item:nth-child(2).reveal.is-visible{clip-path:inset(0 0 0 0 round 48px 2px 2px 2px)}
+.portfolio-item:nth-child(3).reveal{clip-path:inset(0 0 13% 0 round 2px 2px 48px 2px)}
+.portfolio-item:nth-child(3).reveal.is-visible{clip-path:inset(0 0 0 0 round 2px 2px 48px 2px)}
+/* Service imagery and the process photograph use a quiet architectural crop */
+.services .service-card{border-radius:2px 42px 2px 2px}
+.approach-visual{border-radius:2px 78px 2px 2px;overflow:hidden}
+.approach-visual img{display:block;transform:scale(1.035);transition:transform 1.25s var(--cin-ease),filter 1s}
+.approach-visual:hover img{transform:scale(1.075);filter:saturate(1.02)}
+.approach-visual.reveal{clip-path:inset(0 0 10% 0 round 2px 78px 2px 2px);transition:opacity .9s var(--cin-ease),transform .95s var(--cin-ease),filter .95s var(--cin-ease),clip-path 1.1s var(--cin-ease)}
+.approach-visual.reveal.is-visible{clip-path:inset(0 0 0 0 round 2px 78px 2px 2px)}
+/* Supporting elements follow their parent, never compete with the headline */
+.intro-grid>div:nth-child(2){--reveal-delay:120ms}
+.portfolio-intro{--reveal-delay:90ms}
+.portfolio-upload-note{--reveal-delay:320ms}
+.faq-heading{--reveal-delay:0ms}
+.faq-list .faq-item:nth-child(1){--reveal-delay:0ms}
+.faq-list .faq-item:nth-child(2){--reveal-delay:70ms}
+.faq-list .faq-item:nth-child(3){--reveal-delay:140ms}
+.faq-list .faq-item:nth-child(4){--reveal-delay:210ms}
+.faq-list .faq-item:nth-child(5){--reveal-delay:280ms}
+.faq-list .faq-item{transition-delay:var(--reveal-delay,0ms)}
+.contacts-grid>div:first-child{--reveal-delay:0ms}
+.contacts-grid>.contact-panel{--reveal-delay:160ms}
+.planner-main{--reveal-delay:0ms}
+.planner-result{--reveal-delay:150ms}
+@media(max-width:640px){
+ .portfolio-item,.portfolio-item:nth-child(2),.portfolio-item:nth-child(3){border-radius:2px 34px 2px 2px}
+ .portfolio-item.reveal,.portfolio-item:nth-child(2).reveal,.portfolio-item:nth-child(3).reveal{clip-path:inset(0 0 8% 0 round 2px 34px 2px 2px)}
+ .portfolio-item.reveal.is-visible,.portfolio-item:nth-child(2).reveal.is-visible,.portfolio-item:nth-child(3).reveal.is-visible{clip-path:inset(0 0 0 0 round 2px 34px 2px 2px)}
+ .approach-visual,.approach-visual.reveal,.approach-visual.reveal.is-visible{border-radius:2px 44px 2px 2px}
+}
+@media(prefers-reduced-motion:reduce){
+ .reveal,.reveal.is-visible,.portfolio-item.reveal,.portfolio-item.reveal.is-visible,
+ .approach-visual.reveal,.approach-visual.reveal.is-visible{
+  opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;
+  transition:none!important;will-change:auto!important
+ }
+}
