@@ -308,3 +308,30 @@
       linear-gradient(0deg,rgba(10,18,14,.5) 0%,transparent 52%);
   }
 }
+
+
+/* Hero now dissolves into the same muted stone tone as the first section */
+.hero-shade{
+  background:
+    linear-gradient(to bottom,
+      transparent 44%,
+      rgba(201,195,181,.07) 58%,
+      rgba(201,195,181,.22) 72%,
+      rgba(201,195,181,.58) 88%,
+      #c9c3b5 100%),
+    linear-gradient(90deg,rgba(12,22,17,.93) 0%,rgba(15,27,20,.78) 37%,rgba(15,27,20,.3) 72%,rgba(15,27,20,.12) 100%),
+    linear-gradient(0deg,rgba(10,18,14,.52) 0%,transparent 48%,rgba(10,18,14,.2) 100%);
+}
+@media(max-width:800px){
+  .hero-shade{
+    background:
+      linear-gradient(to bottom,
+        transparent 42%,
+        rgba(201,195,181,.08) 57%,
+        rgba(201,195,181,.25) 73%,
+        rgba(201,195,181,.64) 89%,
+        #c9c3b5 100%),
+      linear-gradient(90deg,rgba(12,22,17,.92),rgba(15,27,20,.48)),
+      linear-gradient(0deg,rgba(10,18,14,.5) 0%,transparent 52%);
+  }
+}
