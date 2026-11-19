@@ -426,3 +426,49 @@ html{scroll-behavior:smooth}
   transition:none!important;will-change:auto!important
  }
 }
+
+/* Soft organic finish — no sharp visual corners across the homepage */
+:root{
+  --cin-radius-card:26px;
+  --cin-radius-panel:30px;
+  --cin-radius-control:16px;
+  --cin-radius-photo:34px;
+}
+.services .service-card,
+.portfolio-item,
+.approach-visual{
+  border-radius:var(--cin-radius-photo);
+  overflow:hidden;
+}
+.portfolio-item:nth-child(2),
+.portfolio-item:nth-child(3){border-radius:var(--cin-radius-photo)}
+.portfolio-item img{border-radius:inherit}
+.services .service-card{border-radius:var(--cin-radius-card)}
+.planner-shell{border-radius:var(--cin-radius-panel);overflow:hidden}
+.planner-main{border-radius:22px}
+.planner-result{border-radius:var(--cin-radius-card)}
+.planner-options button{border-radius:var(--cin-radius-control)}
+.portfolio-intro,
+.portfolio-upload-note{border-radius:20px}
+.portfolio-intro{border-left:0;position:relative}
+.portfolio-intro::before{
+  content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;
+  border-radius:99px;background:#b9956d
+}
+.faq-item{border-radius:16px}
+.faq-item summary::after{border-radius:50%}
+.contact-panel{border-radius:var(--cin-radius-panel)}
+.gallery-lightbox{border-radius:28px;overflow:hidden}
+.gallery-close{border-radius:50%}
+.hero-index{border-radius:24px}
+.hero-actions .button-accent,
+.faq-heading .button-accent,
+.contact-panel .button-accent,
+.cta-band .button-light{border-radius:999px}
+@media(max-width:640px){
+  .services .service-card,.portfolio-item,.portfolio-item:nth-child(2),
+  .portfolio-item:nth-child(3),.approach-visual{border-radius:24px}
+  .planner-shell,.planner-main,.planner-result,.contact-panel{border-radius:22px}
+  .portfolio-intro,.portfolio-upload-note{border-radius:17px}
+  .hero-index{border-radius:20px}
+}
