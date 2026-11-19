@@ -1254,3 +1254,75 @@ body{font-family:var(--font-ui)}
     scroll-behavior:auto;
   }
 }
+
+
+/* Final polish: continuous tonal transitions, darker light surfaces, no button arrows */
+.intro{
+  background:
+    linear-gradient(180deg,#c1bbad 0%,rgba(193,187,173,.94) 68%,rgba(43,48,41,.18) 100%),
+    linear-gradient(120deg,#c1bbad,#bdb7a9);
+}
+.services{
+  background:
+    linear-gradient(180deg,rgba(43,48,41,.22) 0%,#292e28 24%,#252a24 100%);
+}
+.project-studio{
+  background:
+    linear-gradient(180deg,#252a24 0%,#222821 100%);
+}
+.approach{
+  background:
+    linear-gradient(180deg,#222821 0%,rgba(174,168,155,.5) 22%,#b3ad9f 57%,#b3ad9f 100%);
+}
+.portfolio{
+  background:
+    linear-gradient(180deg,#b3ad9f 0%,rgba(49,54,46,.42) 25%,#292e28 58%,#252a24 100%);
+}
+.faq{
+  background:
+    linear-gradient(180deg,#252a24 0%,#2c312a 34%,#30352e 100%);
+}
+.cta-band{
+  background:
+    linear-gradient(180deg,#30352e 0%,rgba(105,106,95,.94) 35%,#707166 100%);
+}
+.contacts{
+  background:
+    linear-gradient(180deg,#707166 0%,rgba(174,168,155,.66) 26%,#b3ad9f 62%,#b3ad9f 100%);
+}
+.footer{
+  background:
+    linear-gradient(180deg,#b3ad9f 0%,rgba(42,47,40,.92) 28%,#20251f 100%);
+}
+/* Subsections and inset panels use the same subdued stone/graphite palette */
+.planner-result{
+  background:linear-gradient(145deg,#c4beaf 0%,#b8b2a4 100%);
+  border-color:rgba(48,49,42,.18);
+}
+.portfolio-intro,.portfolio-upload-note{
+  background:linear-gradient(120deg,rgba(183,177,164,.72),rgba(170,165,152,.54));
+  border-color:rgba(75,73,63,.2);
+}
+.portfolio-upload-note b{color:#292d27}
+.portfolio-upload-note p,.portfolio-intro p{color:#494940}
+.contact-panel{
+  background:linear-gradient(145deg,#292e28 0%,#20251f 100%);
+}
+.planner-shell,.planner-main{
+  background-color:rgba(26,31,26,.22);
+}
+.planner-step{background:transparent}
+.service-card{background-color:#292e28}
+.faq-item{background:transparent}
+@media(max-width:800px){
+  .intro,.approach,.portfolio,.contacts,.cta-band{
+    background-size:100% 100%;
+  }
+  .planner-result{background:linear-gradient(145deg,#c4beaf,#b8b2a4)}
+  .portfolio-intro,.portfolio-upload-note{
+    background:linear-gradient(120deg,rgba(183,177,164,.78),rgba(170,165,152,.66));
+  }
+}
+/* Button labels remain clean; directional symbols are not part of CTA buttons */
+.button::after,.button-accent::after,.button-light::after,
+.planner-share::after,.mobile-call::after{content:none!important}
