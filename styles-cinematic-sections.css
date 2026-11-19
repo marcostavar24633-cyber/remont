@@ -1033,3 +1033,138 @@ body{font-family:var(--font-ui)}
 @media(hover:hover) and (pointer:fine){
   .portfolio-item{cursor:zoom-in}
 }
+
+
+/* Readability pass — stronger contrast and sturdier type on dark surfaces */
+.services,.project-studio,.faq{
+  color:#f7f4ed;
+}
+.services .section-heading h2,
+.studio-heading h2,
+.faq-heading h2{
+  color:#fffaf1;
+  font-weight:600;
+  text-shadow:0 2px 18px rgba(0,0,0,.18);
+}
+.services .section-heading h2 em,
+.studio-heading h2 em,
+.faq-heading h2 em{
+  color:#f0d4ad;
+  font-weight:500;
+}
+.services .section-kicker,
+.studio-heading .section-kicker,
+.faq-heading .section-kicker{
+  color:#e8c99e;
+  font-weight:800;
+}
+.services .section-heading>p,
+.studio-heading>p:last-child,
+.faq-heading>p:not(.section-kicker){
+  color:rgba(255,250,241,.86);
+  font-size:clamp(13px,1.05vw,14px);
+  font-weight:500;
+  line-height:1.9;
+}
+.services .service-info h3{
+  color:#fffaf2;
+  font-weight:600;
+  text-shadow:0 2px 14px rgba(0,0,0,.35);
+}
+.services .service-info p{
+  color:rgba(255,250,242,.9);
+  font-size:13px;
+  font-weight:500;
+  line-height:1.85;
+  text-shadow:0 1px 8px rgba(0,0,0,.28);
+}
+.services .service-info>span,
+.services .service-more{
+  color:#f0d2a8;
+  font-weight:700;
+}
+.services .small-note{
+  color:rgba(255,250,241,.76);
+  font-size:12px;
+  font-weight:500;
+  line-height:1.85;
+}
+.planner-step legend{
+  color:#fffaf2;
+  font-size:14px;
+  font-weight:700;
+}
+.planner-options button{
+  color:rgba(255,250,242,.92);
+  font-size:12px;
+  font-weight:600;
+  border-color:rgba(239,219,190,.38);
+}
+.planner-options button[aria-pressed=true]{
+  color:#20251f;
+  font-weight:800;
+}
+.planner-result-label,.planner-photos-label{
+  color:#785735;
+  font-size:9px;
+  font-weight:800;
+}
+.planner-result h3{
+  color:#252820;
+  font-weight:600;
+}
+.planner-result>p{
+  color:#514d45;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.85;
+}
+.faq-item summary{
+  color:#fffaf2;
+  font-size:14px;
+  font-weight:650;
+}
+.faq-item[open] summary{color:#f2d7b2}
+.faq-item p{
+  color:rgba(255,250,242,.88);
+  font-size:13px;
+  font-weight:500;
+  line-height:1.9;
+}
+.faq-item summary::after{
+  color:#f0d4ad;
+  border-color:rgba(240,212,173,.62);
+}
+@media(max-width:800px){
+  .services .section-heading h2,
+  .studio-heading h2,
+  .faq-heading h2{
+    font-weight:650;
+    letter-spacing:-.045em;
+  }
+  .services .section-heading>p,
+  .studio-heading>p:last-child,
+  .faq-heading>p:not(.section-kicker),
+  .services .service-info p,
+  .services .small-note,
+  .planner-result>p,
+  .faq-item p{
+    color:rgba(255,252,246,.94);
+    font-size:14px;
+    font-weight:500;
+    line-height:1.85;
+  }
+  .services .service-info h3{font-weight:650}
+  .planner-step legend{font-size:15px;font-weight:700}
+  .planner-options button{font-size:13px;font-weight:650}
+  .faq-item summary{font-size:15px;font-weight:650}
+  .services .section-kicker,.studio-heading .section-kicker,.faq-heading .section-kicker{
+    font-size:10px;
+    letter-spacing:.17em;
+  }
+}
+@media(max-width:420px){
+  .services .service-info p,.faq-item p,
+  .faq-heading>p:not(.section-kicker),
+  .studio-heading>p:last-child{font-size:14px}
+}
