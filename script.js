@@ -135,9 +135,24 @@
       'Что нужно уточнить:',
       ...checklist.map((item) => '— ' + item),
       '',
+      'Телефон для связи: +7 963 128-25-58',
       'Сайт: https://marcostavar24633-cyber.github.io/remont/'
     ].join('\n');
   };
+  const plannerDownload = document.querySelector('#planner-download');
+  plannerDownload?.addEventListener('click', () => {
+    const blob = new Blob([buildPlannerBrief()], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'brief-na-remont-dom-ulyanovsk.txt';
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    trackEvent('planner_brief_download');
+    if (plannerShareStatus) plannerShareStatus.textContent = 'Бриф скачан на ваше устройство. Его можно отправить вместе с фотографиями в удобном мессенджере.';
+  });
   const photoInput = document.querySelector('#planner-photos-input');
   const photoPreview = document.querySelector('#planner-photos-preview');
   const photoClear = document.querySelector('#planner-photos-clear');
