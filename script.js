@@ -307,3 +307,19 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 })();
+
+// Independent text entrances create a gentle reading rhythm within each section.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const textObserver = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -24px 0px' });
+    document.querySelectorAll('.intro h2,.intro-copy,.section-heading h2,.section-heading>p,.studio-heading h2,.studio-heading>p,.approach h2,.faq-heading h2,.faq-heading>p,.contacts h2,.contact-copy,.cta-band h2,.service-info h3,.service-info p,.portfolio-item figcaption,.step h3,.step p').forEach((item) => {
+      item.classList.add('reveal-text');
+      textObserver.observe(item);
+    });
+  }
