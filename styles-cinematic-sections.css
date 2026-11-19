@@ -1645,3 +1645,60 @@ body{font-family:var(--font-ui)}
   .service-page .service-hero-image{animation:none!important;transform:none!important}
   .service-page .detail-card{transition:none!important}
 }
+
+
+/* Services directory page — editorial catalog aligned with homepage */
+.page-services .service-hero{min-height:min(760px,88svh)!important}
+.page-services .service-hero-image{
+  filter:saturate(.72) contrast(1.03)!important;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 55%,rgba(0,0,0,.84) 72%,rgba(0,0,0,.24) 91%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 55%,rgba(0,0,0,.84) 72%,rgba(0,0,0,.24) 91%,transparent 100%);
+}
+.page-services .service-hero-shade{
+  background:linear-gradient(90deg,rgba(17,25,19,.84),rgba(17,25,19,.54) 55%,rgba(17,25,19,.12)),
+    linear-gradient(to bottom,rgba(16,22,17,.12),rgba(16,22,17,.12) 52%,rgba(201,195,181,.2) 74%,#c9c3b5 100%)!important;
+}
+.page-services .service-hero h1{max-width:920px}
+.page-services .service-hero .hero-lead{max-width:720px}
+.page-services .service-detail-intro{
+  background:linear-gradient(180deg,#c9c3b5 0%,#c5beaf 62%,#b8b2a5 100%)!important;
+  position:relative;isolation:isolate;
+}
+.page-services .service-detail-intro::after{
+  content:"01";position:absolute;z-index:-1;right:4vw;top:-.2em;
+  font:500 clamp(180px,28vw,380px)/1 "Playfair Display",serif;
+  color:rgba(66,62,52,.055);pointer-events:none;
+}
+.page-services .service-detail-list{
+  background:linear-gradient(180deg,#b8b2a5 0%,#30372f 27%,#252b25 100%)!important;
+}
+.page-services .detail-grid{gap:18px!important}
+.page-services .detail-card{
+  min-height:270px;display:flex;flex-direction:column;align-items:flex-start;
+  padding:clamp(24px,3vw,38px)!important;
+  transition:transform .55s cubic-bezier(.22,.61,.36,1),border-color .55s ease,box-shadow .55s ease;
+}
+.page-services .detail-card:hover{transform:translateY(-5px);border-color:rgba(220,190,150,.48)!important;box-shadow:0 24px 55px rgba(12,18,13,.22)!important}
+.page-services .detail-card h3{margin:.8em 0 .45em}
+.page-services .detail-card p{flex:1}
+.page-services .detail-card .service-more{
+  display:inline-flex;align-items:center;gap:12px;margin-top:22px;
+  padding-bottom:9px;border-bottom:1px solid rgba(218,185,143,.48);
+  text-decoration:none;letter-spacing:.08em;text-transform:uppercase;
+  font-size:11px;font-weight:700;
+}
+.page-services .service-detail-process{
+  background:linear-gradient(180deg,#252b25 0%,#30372f 60%,#bdb7a9 100%)!important;
+}
+.page-services .cta-band{background:linear-gradient(145deg,#30372f,#202720)!important}
+@media(max-width:800px){
+  .page-services .service-hero{min-height:760px!important}
+  .page-services .service-hero-content{padding-top:115px!important;padding-bottom:105px!important}
+  .page-services .detail-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .page-services .detail-card{min-height:0;padding:26px!important}
+  .page-services .service-detail-intro::after{right:-3vw;top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .page-services .detail-card{transition:none!important}
+  .page-services .detail-card:hover{transform:none}
+}
