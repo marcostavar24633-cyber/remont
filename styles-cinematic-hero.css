@@ -241,3 +241,12 @@
 }
 .hero-content>*{animation-duration:1.35s}
 .hero-index{animation-duration:1.35s}
+
+
+/* Hero-to-content transition: cinematic image dissolves into warm stone */
+.hero-shade{
+  background:
+    linear-gradient(90deg,rgba(12,22,17,.91) 0%,rgba(15,27,20,.76) 37%,rgba(15,27,20,.28) 72%,rgba(15,27,20,.12) 100%),
+    linear-gradient(0deg,rgba(10,18,14,.72) 0%,transparent 48%,rgba(10,18,14,.2) 100%),
+    linear-gradient(to bottom,transparent 68%,#eee9df 100%);
+}
