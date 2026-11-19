@@ -194,3 +194,57 @@ button[class*="button"]::after, a[class*="button"]::after{content:none!important
     filter:none!important;
   }
 }
+
+
+/* Landscape screens: keep the hero headline above the stone dissolve.
+   The previous vertical fade began behind the headline on short wide screens. */
+@media (orientation:landscape) and (min-width:801px) and (max-height:950px){
+  .hero{
+    min-height:max(760px,100svh)!important;
+    height:max(760px,100svh)!important;
+  }
+  .hero-shade{
+    background:
+      linear-gradient(to bottom,
+        transparent 70%,
+        rgba(201,195,181,.06) 80%,
+        rgba(201,195,181,.18) 88%,
+        rgba(201,195,181,.48) 95%,
+        #c9c3b5 100%),
+      linear-gradient(90deg,rgba(12,22,17,.93) 0%,rgba(15,27,20,.78) 37%,rgba(15,27,20,.3) 72%,rgba(15,27,20,.12) 100%),
+      linear-gradient(0deg,rgba(10,18,14,.58) 0%,transparent 52%,rgba(10,18,14,.2) 100%)!important;
+  }
+  .hero-content{
+    padding-top:clamp(110px,15vh,160px)!important;
+    padding-bottom:clamp(150px,20vh,210px)!important;
+  }
+  .hero h1,.hero-lead,.hero-note,.hero-content .eyebrow{
+    position:relative;
+    z-index:3;
+    text-shadow:0 2px 20px rgba(0,0,0,.55)!important;
+  }
+}
+
+/* Short landscape phones/tablets need a compact, readable first screen. */
+@media (orientation:landscape) and (max-height:600px){
+  .hero{
+    min-height:680px!important;
+    height:auto!important;
+  }
+  .hero-content{
+    padding-top:112px!important;
+    padding-bottom:180px!important;
+  }
+  .hero h1{
+    max-width:760px!important;
+    font-size:clamp(38px,6vw,58px)!important;
+    line-height:1.04!important;
+  }
+  .hero-lead{max-width:620px!important;font-size:13px!important;line-height:1.65!important}
+  .hero-index{bottom:24px!important;padding:10px 14px!important}
+  .hero-shade{
+    background:
+      linear-gradient(to bottom,transparent 72%,rgba(201,195,181,.12) 86%,#c9c3b5 100%),
+      linear-gradient(90deg,rgba(12,22,17,.94),rgba(15,27,20,.55))!important;
+  }
+}
