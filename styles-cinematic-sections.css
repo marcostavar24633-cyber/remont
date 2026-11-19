@@ -1326,3 +1326,43 @@ body{font-family:var(--font-ui)}
 /* Button labels remain clean; directional symbols are not part of CTA buttons */
 .button::after,.button-accent::after,.button-light::after,
 .planner-share::after,.mobile-call::after{content:none!important}
+
+
+/* Seamless section joins: keep each section's opening tone through its midpoint,
+   then blend gradually into the exact tone of the following section. */
+.intro{
+  background:linear-gradient(180deg,#c1bbad 0%,#c1bbad 48%,#292e28 100%)!important;
+}
+.services{
+  background:linear-gradient(180deg,#292e28 0%,#292e28 48%,#252a24 100%)!important;
+}
+.project-studio{
+  background:linear-gradient(180deg,#252a24 0%,#252a24 48%,#222821 100%)!important;
+}
+.approach{
+  background:linear-gradient(180deg,#222821 0%,#222821 48%,#b3ad9f 100%)!important;
+}
+.portfolio{
+  background:linear-gradient(180deg,#b3ad9f 0%,#b3ad9f 48%,#292e28 100%)!important;
+}
+.faq{
+  background:linear-gradient(180deg,#292e28 0%,#292e28 48%,#30352e 100%)!important;
+}
+.cta-band{
+  background:linear-gradient(180deg,#30352e 0%,#30352e 48%,#707166 100%)!important;
+}
+.contacts{
+  background:linear-gradient(180deg,#707166 0%,#707166 48%,#b3ad9f 100%)!important;
+}
+.footer{
+  background:linear-gradient(180deg,#b3ad9f 0%,#b3ad9f 48%,#20251f 100%)!important;
+}
+.intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
+}
+@media(max-width:800px){
+  .intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{
+    background-size:100% 100%!important;
+  }
+}
