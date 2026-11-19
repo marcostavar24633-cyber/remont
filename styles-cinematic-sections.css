@@ -897,3 +897,73 @@ body{font-family:var(--font-ui)}
     transition:none!important;transform:none!important;clip-path:none!important
   }
 }
+
+
+/* Quiet architectural detailing and a deliberate closing frame */
+.portfolio .section-heading{
+  position:relative;
+  padding-bottom:25px;
+  border-bottom:1px solid rgba(143,111,77,.2);
+}
+.portfolio .section-heading::after{
+  content:"";
+  position:absolute;right:0;bottom:-1px;width:clamp(54px,9vw,118px);height:1px;
+  background:linear-gradient(90deg,transparent,#b9956d);
+}
+.footer{
+  position:relative;overflow:hidden;
+  padding:38px 0 30px;
+  background:linear-gradient(115deg,#20251f 0%,#292e27 58%,#1d241f 100%);
+  border-top:1px solid rgba(213,185,148,.2);
+}
+.footer::before{
+  content:"";
+  position:absolute;top:0;left:50%;width:min(1180px,82vw);height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,rgba(213,185,148,.48),transparent);
+}
+.footer::after{
+  content:"Д";
+  position:absolute;right:5vw;bottom:-.65em;
+  color:rgba(226,204,174,.035);
+  font:400 clamp(150px,23vw,300px)/1 "Playfair Display",Georgia,serif;
+  pointer-events:none;
+}
+.footer-inner{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:auto 1fr auto auto;
+  align-items:center;gap:clamp(18px,3vw,42px);
+  color:rgba(238,232,220,.62);
+  font-size:10px;letter-spacing:.04em;
+}
+.brand-footer{color:#f4eee4}
+.brand-footer .brand-mark{
+  border-color:rgba(213,185,148,.58);
+  color:#dfc5a2;
+}
+.footer-inner>a[href^="tel:"]{
+  color:#e4c8a4;text-decoration:none;
+  transition:color .3s ease;
+}
+.footer-inner>a[href^="tel:"]:hover{color:#fff0d7}
+.copyright{color:rgba(238,232,220,.38)}
+@media(max-width:800px){
+  .footer{padding:32px 0 26px}
+  .footer-inner{
+    grid-template-columns:1fr auto;
+    gap:18px 22px;
+    align-items:center;
+  }
+  .footer-inner>.brand-footer{grid-column:1}
+  .footer-inner>span:not(.copyright){grid-column:1/-1;grid-row:2}
+  .footer-inner>a[href^="tel:"]{grid-column:2;grid-row:1}
+  .footer-inner>.copyright{grid-column:1/-1;grid-row:3}
+  .footer::after{right:-2vw;font-size:180px}
+}
+@media(max-width:420px){
+  .footer-inner{grid-template-columns:1fr}
+  .footer-inner>.brand-footer,.footer-inner>span:not(.copyright),
+  .footer-inner>a[href^="tel:"],.footer-inner>.copyright{
+    grid-column:1;grid-row:auto
+  }
+}
