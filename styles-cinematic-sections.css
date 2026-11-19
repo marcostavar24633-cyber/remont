@@ -1168,3 +1168,89 @@ body{font-family:var(--font-ui)}
   .faq-heading>p:not(.section-kicker),
   .studio-heading>p:last-child{font-size:14px}
 }
+
+
+/* Unified low-contrast stone palette + long dissolves between every section */
+:root{
+  --scene-stone:#c9c3b5;
+  --scene-stone-deep:#b9b3a6;
+  --scene-forest:#292e28;
+  --scene-forest-deep:#222821;
+  --scene-olive:#77786d;
+}
+.intro{
+  color:#252820;
+  background-color:var(--scene-stone);
+  background-image:
+    linear-gradient(to bottom,var(--scene-stone) 0%,rgba(201,195,181,.82) 44%,rgba(41,46,40,.12) 100%),
+    linear-gradient(115deg,#c9c3b5 0%,#c1bbad 100%);
+}
+.services{
+  background-color:var(--scene-forest);
+  background-image:
+    linear-gradient(to bottom,rgba(41,46,40,.12) 0%,var(--scene-forest) 30%,rgba(34,40,33,.96) 100%);
+}
+.project-studio{
+  background-color:#252b25;
+  background-image:
+    linear-gradient(to bottom,#292e28 0%,rgba(37,43,37,.94) 24%,#252b25 100%);
+}
+.approach{
+  color:#282a24;
+  background-color:var(--scene-stone-deep);
+  background-image:
+    linear-gradient(to bottom,#252b25 0%,rgba(185,179,166,.35) 25%,rgba(185,179,166,.92) 62%,#b9b3a6 100%);
+}
+.portfolio{
+  background-color:#292e28;
+  background-image:
+    linear-gradient(to bottom,#b9b3a6 0%,rgba(41,46,40,.28) 24%,#292e28 62%,#252a24 100%);
+}
+.faq{
+  background-color:#30352e;
+  background-image:
+    linear-gradient(to bottom,#292e28 0%,rgba(48,53,46,.96) 30%,#30352e 100%);
+}
+.cta-band{
+  background-color:var(--scene-olive);
+  background-image:
+    linear-gradient(to bottom,#30352e 0%,rgba(119,120,109,.48) 34%,#77786d 100%);
+}
+.contacts{
+  color:#292b25;
+  background-color:var(--scene-stone-deep);
+  background-image:
+    linear-gradient(to bottom,#77786d 0%,rgba(185,179,166,.38) 27%,#b9b3a6 68%,#b9b3a6 100%);
+}
+.footer{
+  background-color:#20251f;
+  background-image:linear-gradient(to bottom,#b9b3a6 0%,rgba(32,37,31,.7) 26%,#20251f 100%);
+}
+/* Keep section edges soft without adding overlays above text or controls */
+.intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+.intro .section-kicker,.approach .section-kicker,.contacts .section-kicker{
+  color:#675640;
+}
+.intro p:not(.section-kicker),.approach p:not(.section-kicker),.contacts p:not(.section-kicker){
+  color:#45443d;
+}
+.intro h2,.approach h2,.contacts h2{color:#252820}
+@media(max-width:800px){
+  .intro,.approach,.contacts{
+    background-size:100% 100%;
+  }
+  .intro,.approach,.contacts{
+    -webkit-text-size-adjust:100%;
+  }
+  .intro .section-kicker,.approach .section-kicker,.contacts .section-kicker{
+    color:#5f503e;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{
+    scroll-behavior:auto;
+  }
+}
