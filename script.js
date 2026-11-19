@@ -265,6 +265,45 @@
       item.classList.add('reveal'); observer.observe(item);
     });
   }
+  // Restrained pointer parallax for the desktop hero. No motion on touch or reduced-motion devices.
+  const hero = document.querySelector('.hero');
+  const heroImage = hero?.querySelector('.hero-image');
+  const heroContent = hero?.querySelector('.hero-content');
+  const heroIndex = hero?.querySelector('.hero-index');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 801px)');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (hero && heroImage && finePointer.matches && !reduceMotion.matches) {
+    let parallaxFrame = 0;
+    const resetParallax = () => {
+      hero.style.setProperty('--parallax-bg-x', '0px');
+      hero.style.setProperty('--parallax-bg-y', '0px');
+      hero.style.setProperty('--parallax-copy-x', '0px');
+      hero.style.setProperty('--parallax-copy-y', '0px');
+      hero.style.setProperty('--parallax-panel-x', '0px');
+      hero.style.setProperty('--parallax-panel-y', '0px');
+    };
+    hero.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      const rect = hero.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
+      parallaxFrame = requestAnimationFrame(() => {
+        hero.style.setProperty('--parallax-bg-x', (x * -18).toFixed(2) + 'px');
+        hero.style.setProperty('--parallax-bg-y', (y * -12).toFixed(2) + 'px');
+        hero.style.setProperty('--parallax-copy-x', (x * 5).toFixed(2) + 'px');
+        hero.style.setProperty('--parallax-copy-y', (y * 4).toFixed(2) + 'px');
+        hero.style.setProperty('--parallax-panel-x', (x * -9).toFixed(2) + 'px');
+        hero.style.setProperty('--parallax-panel-y', (y * -6).toFixed(2) + 'px');
+        parallaxFrame = 0;
+      });
+    }, { passive: true });
+    hero.addEventListener('pointerleave', resetParallax, { passive: true });
+    reduceMotion.addEventListener?.('change', (event) => {
+      if (event.matches) resetParallax();
+    });
+  }
+
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 })();
