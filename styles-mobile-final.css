@@ -149,3 +149,48 @@ button[class*="button"]::after, a[class*="button"]::after{content:none!important
 @media(prefers-reduced-motion:reduce){
   .intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{scroll-behavior:auto}
 }
+
+
+/* Slower, softer text entrances across the homepage */
+.hero-content>*{
+  animation-duration:1.9s!important;
+  animation-timing-function:cubic-bezier(.22,.61,.36,1)!important;
+}
+.hero-content .eyebrow{animation-delay:.35s!important}
+.hero-content h1{animation-delay:.7s!important}
+.hero-content .hero-lead{animation-delay:1.05s!important}
+.hero-content .hero-actions{animation-delay:1.4s!important}
+.hero-content .hero-note{animation-delay:1.7s!important}
+.hero-index{
+  animation-duration:1.9s!important;
+  animation-timing-function:cubic-bezier(.22,.61,.36,1)!important;
+  animation-delay:1.1s!important;
+}
+.reveal-text{
+  transform:translate3d(0,7px,0)!important;
+  filter:blur(.7px)!important;
+  transition:
+    opacity 1.8s cubic-bezier(.22,.61,.36,1),
+    transform 2s cubic-bezier(.22,.61,.36,1),
+    filter 2s cubic-bezier(.22,.61,.36,1)!important;
+  transition-delay:var(--text-delay,0ms)!important;
+}
+.reveal-text.is-visible{
+  opacity:1!important;
+  transform:translate3d(0,0,0)!important;
+  filter:blur(0)!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-content>*,.hero-index{
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+  }
+  .reveal-text,.reveal-text.is-visible{
+    transition:none!important;
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+  }
+}
