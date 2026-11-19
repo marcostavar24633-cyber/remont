@@ -764,3 +764,33 @@ body{font-family:var(--font-ui)}
     opacity:1!important;transform:none!important;filter:none!important;transition:none!important
   }
 }
+
+
+/* Seamless section transitions — slow tonal gradients between scenes */
+.intro{
+  background-image:linear-gradient(to bottom,transparent 58%,#20231f 100%),linear-gradient(115deg,#eee9df 0%,#e8e1d5 100%);
+}
+.services{
+  background-image:linear-gradient(to bottom,transparent 52%,#292e28 100%);
+}
+.project-studio{
+  background-image:linear-gradient(to bottom,transparent 54%,#d8d5cc 100%),linear-gradient(135deg,#292e28,#1d241f 72%);
+}
+.approach{
+  background-image:linear-gradient(to bottom,transparent 54%,#d0cdc3 100%);
+}
+.portfolio{
+  background-image:linear-gradient(to bottom,transparent 54%,#20231f 100%);
+}
+.faq{
+  background-image:linear-gradient(to bottom,transparent 54%,#8c897d 100%);
+}
+.cta-band{
+  background-image:linear-gradient(to bottom,transparent 48%,#e9e3d8 100%),linear-gradient(145deg,#8c897d,#858477);
+}
+@media(prefers-reduced-motion:no-preference){
+  .intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band{
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+  }
+}
