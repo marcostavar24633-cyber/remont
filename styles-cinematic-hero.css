@@ -250,3 +250,34 @@
     linear-gradient(0deg,rgba(10,18,14,.72) 0%,transparent 48%,rgba(10,18,14,.2) 100%),
     linear-gradient(to bottom,transparent 68%,#eee9df 100%);
 }
+
+
+/* Wider hero dissolve — a long, gradual fade into the first stone section */
+.hero-shade{
+  background:
+    linear-gradient(90deg,rgba(12,22,17,.93) 0%,rgba(15,27,20,.78) 37%,rgba(15,27,20,.3) 72%,rgba(15,27,20,.12) 100%),
+    linear-gradient(0deg,rgba(10,18,14,.76) 0%,transparent 48%,rgba(10,18,14,.2) 100%),
+    linear-gradient(to bottom,
+      transparent 54%,
+      rgba(238,233,223,.10) 69%,
+      rgba(238,233,223,.48) 86%,
+      #eee9df 100%);
+}
+.hero h1,.hero-lead,.hero-note,.hero-content .eyebrow{
+  text-shadow:0 2px 18px rgba(0,0,0,.34);
+}
+@media(max-width:800px){
+  .hero-shade{
+    background:
+      linear-gradient(90deg,rgba(12,22,17,.92),rgba(15,27,20,.48)),
+      linear-gradient(0deg,rgba(10,18,14,.72),transparent 55%),
+      linear-gradient(to bottom,
+        transparent 50%,
+        rgba(238,233,223,.10) 68%,
+        rgba(238,233,223,.48) 86%,
+        #eee9df 100%);
+  }
+  .hero h1,.hero-lead,.hero-note,.hero-content .eyebrow{
+    text-shadow:0 2px 16px rgba(0,0,0,.48);
+  }
+}
