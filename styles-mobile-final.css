@@ -1,0 +1,151 @@
+/* MOBILE READABILITY + QUIET SECTION BLENDS — final override */
+:root{
+  --blend-stone:#aaa596;
+  --blend-stone-deep:#9f9b8d;
+  --blend-graphite:#292e28;
+  --blend-graphite-deep:#242a24;
+  --blend-bronze:#e0bd91;
+}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+
+/* One continuous, low-contrast tonal rhythm. Each section fades from its
+   midpoint toward the next section's exact opening tone. */
+.intro{
+  color:#242820!important;
+  background:linear-gradient(180deg,#c9c3b5 0%,#b8b2a4 48%,#292e28 100%)!important;
+}
+.services{
+  color:#f7f3eb!important;
+  background:linear-gradient(180deg,#292e28 0%,#292e28 52%,#252a24 100%)!important;
+}
+.project-studio{
+  color:#f7f3eb!important;
+  background:linear-gradient(180deg,#252a24 0%,#252a24 52%,#222821 100%)!important;
+}
+.approach{
+  color:#f7f3eb!important;
+  background:linear-gradient(180deg,#222821 0%,#292e28 52%,#aaa596 100%)!important;
+}
+.portfolio{
+  color:#252820!important;
+  background:linear-gradient(180deg,#aaa596 0%,#aaa596 52%,#292e28 100%)!important;
+}
+.faq{
+  color:#f7f3eb!important;
+  background:linear-gradient(180deg,#292e28 0%,#292e28 52%,#30352e 100%)!important;
+}
+.cta-band{
+  color:#f7f3eb!important;
+  background:linear-gradient(180deg,#30352e 0%,#454a40 52%,#77796d 100%)!important;
+}
+.contacts{
+  color:#252820!important;
+  background:linear-gradient(180deg,#77796d 0%,#929184 52%,#292e28 100%)!important;
+}
+.footer{
+  color:#f7f3eb!important;
+  background:linear-gradient(180deg,#292e28 0%,#242a24 100%)!important;
+}
+.intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
+}
+
+/* Strong, stable contrast: no translucent copy on top of a changing gradient. */
+.intro h2,.intro h2 em,.contacts h2,.contacts h2 em,
+.portfolio h2,.portfolio h2 em{color:#252820!important}
+.intro-copy,.contacts .contact-copy,.contacts .contact-location,
+.portfolio .section-heading>p,.portfolio .portfolio-intro p,
+.portfolio .portfolio-upload-note p,.portfolio .small-note{
+  color:#383a34!important;opacity:1!important
+}
+.services h2,.services h2 em,.services h3,.services .service-info p,
+.project-studio h2,.project-studio h2 em,.project-studio .planner-step legend,
+.approach h2,.approach h2 em,.approach .approach-desc,
+.approach .step h3,.approach .step p,
+.faq h2,.faq h2 em,.faq .faq-item summary,.faq .faq-item p,
+.cta-band h2,.cta-band h2 em,.footer,.footer a{
+  text-shadow:none!important
+}
+.services .service-info p{color:#f0eee7!important;opacity:1!important}
+.services .small-note{color:#e1dfd6!important;opacity:1!important}
+.project-studio .studio-heading>p:last-child{color:#e4e2d9!important;opacity:1!important}
+.approach .approach-desc,.approach .step p{color:#f0eee8!important;opacity:1!important}
+.faq .faq-heading>p:not(.section-kicker),.faq .faq-item p{color:#e9e6de!important;opacity:1!important}
+.contact-panel>p:not(.privacy-note),.contact-panel .privacy-note{color:#e6e3da!important;opacity:1!important}
+
+/* Remove ornamental arrow glyphs from every button-like control/link.
+   Keep meaningful disclosure controls (FAQ + and mobile menu +) intact. */
+.button::after,.button::before,
+a.button::after,a.button::before,
+.button-accent::after,.button-accent::before,
+.button-light::after,.button-light::before,
+.service-more::after,.service-more::before,
+.text-link::after,.contact-brief-link::after,
+.mobile-call::after,.mobile-call::before,
+.planner-share::after,.planner-share::before{
+  content:none!important;display:none!important
+}
+.button span,.button-accent span,.button-light span,
+.service-more span,.contact-brief-link span,.text-link span,
+.mobile-call span{display:none!important}
+button[class*="button"]::after, a[class*="button"]::after{content:none!important}
+.button,.button-accent,.button-light,.service-more,.mobile-call{
+  justify-content:center!important;gap:0!important
+}
+
+/* Mobile-first type sizing: readable body copy, labels and controls. */
+@media(max-width:800px){
+  .section-pad{padding-top:66px!important;padding-bottom:68px!important}
+  .intro h2,.section-heading h2,.approach h2,.contacts h2,.cta-band h2{
+    font-size:clamp(31px,7.8vw,42px)!important;line-height:1.14!important
+  }
+  .studio-heading h2,.faq-heading h2{
+    font-size:clamp(32px,8vw,43px)!important;line-height:1.13!important
+  }
+  .intro-copy,.section-heading>p,.services .section-heading>p,
+  .approach-desc,.contact-copy,.faq-heading>p:not(.section-kicker),
+  .portfolio-intro p,.portfolio-upload-note p{
+    font-size:15px!important;line-height:1.72!important
+  }
+  .services .service-info h3{font-size:25px!important;line-height:1.18!important}
+  .services .service-info p,.approach .step p,.faq-item p,
+  .contact-panel>p:not(.privacy-note),.planner-result>p{
+    font-size:14px!important;line-height:1.7!important
+  }
+  .small-note,.portfolio-tag,.portfolio-item figcaption span,
+  .section-kicker,.panel-label,.planner-result-label,.planner-photos-label{
+    font-size:11px!important;line-height:1.6!important
+  }
+  .service-more,.contact-brief-link,.hero-actions .text-link{
+    font-size:12px!important;line-height:1.55!important
+  }
+  .faq-item summary{font-size:15px!important;line-height:1.55!important}
+  .planner-step legend{font-size:15px!important;line-height:1.5!important}
+  .planner-options button{font-size:13px!important;line-height:1.35!important;min-height:48px!important}
+  .contact-phone{font-size:clamp(27px,7vw,34px)!important}
+  .hero-lead{font-size:15px!important;line-height:1.7!important}
+  .hero h1{font-size:clamp(36px,9vw,48px)!important;line-height:1.08!important}
+  .hero-index li{font-size:10px!important;line-height:1.45!important}
+  .hero-index li span{font-size:17px!important}
+  .button,.button-accent,.button-light,.mobile-call{
+    min-height:50px!important;font-size:12px!important;line-height:1.35!important;
+    white-space:normal!important;text-align:center!important;padding:14px 18px!important
+  }
+  .service-card,.planner-result,.contact-panel,.portfolio-item,
+  .portfolio-intro,.portfolio-upload-note{border-radius:18px!important;overflow:hidden}
+  .service-card{grid-template-columns:1fr!important}
+  .service-photo{height:210px!important;min-height:210px!important}
+  .service-info{padding:21px!important}
+  .portfolio-item img,.portfolio-item-wide img{height:245px!important;min-height:245px!important}
+}
+@media(max-width:380px){
+  .container{width:calc(100% - 30px)!important}
+  .intro-copy,.section-heading>p,.approach-desc,.contact-copy,
+  .faq-heading>p:not(.section-kicker),.portfolio-intro p{font-size:14px!important}
+  .hero h1{font-size:36px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .intro,.services,.project-studio,.approach,.portfolio,.faq,.cta-band,.contacts,.footer{scroll-behavior:auto}
+}
