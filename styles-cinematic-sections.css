@@ -967,3 +967,56 @@ body{font-family:var(--font-ui)}
     grid-column:1;grid-row:auto
   }
 }
+
+
+/* Gallery lightbox — immersive, quiet presentation */
+.gallery-lightbox{
+  position:fixed;inset:0;
+  width:min(92vw,1240px);max-width:none;max-height:90svh;
+  margin:auto;padding:clamp(14px,2vw,24px);
+  border:1px solid rgba(224,196,158,.24);
+  border-radius:22px;
+  color:#f2ece2;
+  background:linear-gradient(145deg,rgba(34,39,33,.98),rgba(19,25,20,.985));
+  box-shadow:0 35px 120px rgba(0,0,0,.48);
+  overflow:visible;
+}
+.gallery-lightbox::backdrop{
+  background:rgba(12,16,13,.82);
+  backdrop-filter:blur(12px);
+}
+.gallery-lightbox[open]{animation:gallery-dialog-in .55s cubic-bezier(.22,.61,.36,1) both}
+@keyframes gallery-dialog-in{
+  from{opacity:0;transform:translateY(12px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.gallery-lightbox-image{
+  display:block;width:100%;max-height:calc(90svh - 92px);
+  object-fit:contain;border-radius:13px;
+}
+.gallery-lightbox-caption{
+  margin:13px 54px 0 4px;
+  color:rgba(242,236,226,.68);
+  font-size:10px;letter-spacing:.08em;
+}
+.gallery-close{
+  position:absolute;z-index:3;top:-13px;right:-13px;
+  display:grid;place-items:center;width:42px;height:42px;
+  border:1px solid rgba(226,204,174,.48);border-radius:50%;
+  color:#f2e6d4;background:#2b3029;
+  font-size:24px;line-height:1;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  transition:transform .35s ease,background .35s ease,color .35s ease;
+}
+.gallery-close:hover{transform:rotate(90deg);background:#d7bd98;color:#20251f}
+.gallery-close:focus-visible{outline:2px solid #e3c69f;outline-offset:4px}
+@media(max-width:640px){
+  .gallery-lightbox{width:calc(100vw - 24px);padding:10px;border-radius:15px}
+  .gallery-lightbox-image{max-height:calc(86svh - 72px);border-radius:9px}
+  .gallery-close{top:-9px;right:-5px;width:38px;height:38px}
+  .gallery-lightbox-caption{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery-lightbox[open]{animation:none}
+  .gallery-close{transition:none}
+}
