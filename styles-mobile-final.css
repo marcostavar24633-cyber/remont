@@ -324,3 +324,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+
+/* Planner: reliable offline hand-off when native sharing is unavailable. */
+.planner-download{
+  display:flex;align-items:center;justify-content:center;width:100%;
+  min-height:50px;margin-top:10px;padding:14px 20px;
+  border:1px solid rgba(224,196,159,.55);border-radius:999px;
+  background:transparent;color:#eee9df;
+  font:inherit;font-size:12px;font-weight:600;letter-spacing:.075em;
+  cursor:pointer;transition:background .25s ease,border-color .25s ease,transform .25s ease;
+}
+.planner-download:hover{background:rgba(224,196,159,.1);border-color:#e0c49f;transform:translateY(-1px)}
+.planner-download:focus-visible{outline:2px solid #e0c49f;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.planner-download{transition:none}}
