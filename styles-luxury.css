@@ -23,7 +23,7 @@
   --ease-lux:cubic-bezier(.2,.75,.25,1);
 }
 html{scroll-behavior:smooth;scroll-padding-top:96px}
-body{background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif}
+body{background:var(--paper);color:var(--ink);font-family:DM Sans,Arial,sans-serif}
 ::selection{background:var(--bronze);color:#fff}
 a{transition:color .25s var(--ease-lux)}
 .container{width:min(1240px,calc(100% - 64px))}
@@ -48,7 +48,7 @@ a{transition:color .25s var(--ease-lux)}
 .eyebrow{color:#dfc3a5}
 .eyebrow span{background:var(--bronze-light)}
 .hero h1{max-width:850px;font-size:clamp(50px,7.3vw,96px);line-height:1.02;letter-spacing:-.075em;font-weight:500}
-.hero h1 em,h2 em{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-style:italic}
+.hero h1 em,h2 em{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic}
 .hero-lead{max-width:540px;font-size:14px;line-height:1.95;color:rgba(250,247,240,.82)}
 .hero-actions{gap:25px;margin-top:40px}
 .button{position:relative;isolation:isolate;overflow:hidden;border-radius:999px;padding:18px 25px;gap:34px;min-height:58px;transition:transform .35s var(--ease-lux),background .35s,color .35s,box-shadow .35s}
@@ -196,7 +196,7 @@ input,select,textarea{border-radius:var(--radius-sm)}
   line-height:1.01;letter-spacing:-.075em;font-weight:500
 }
 .service-page .service-hero h1 em{
-  font-family:"Cormorant Garamond",Georgia,serif;
+  font-family:"Playfair Display",Georgia,serif;
   color:var(--bronze-light);font-weight:500
 }
 .service-page .service-hero .hero-lead{max-width:560px;color:rgba(247,242,233,.8);line-height:1.95}
@@ -206,7 +206,7 @@ input,select,textarea{border-radius:var(--radius-sm)}
   font-size:clamp(38px,4.8vw,64px);font-weight:500;letter-spacing:-.07em;line-height:1.06
 }
 .service-page .detail-narrow h2 em,.service-page .process-grid h2 em{
-  font-family:"Cormorant Garamond",Georgia,serif;color:var(--clay);font-weight:500
+  font-family:"Playfair Display",Georgia,serif;color:var(--clay);font-weight:500
 }
 .service-page .detail-narrow p:not(.section-kicker),.service-page .detail-copy{
   color:#716b62;font-size:13px;line-height:2;max-width:760px
@@ -277,11 +277,11 @@ input,select,textarea{border-radius:var(--radius-sm)}
 .breadcrumbs{font-size:10px;letter-spacing:.04em;color:rgba(250,247,240,.72)}
 .breadcrumbs a{color:var(--bronze-light);text-underline-offset:5px}
 .service-hero h1{font-size:clamp(48px,7vw,88px);line-height:1.02;letter-spacing:-.07em;font-weight:500;max-width:900px}
-.service-hero h1 em{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-style:italic;color:var(--bronze-light)}
+.service-hero h1 em{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:var(--bronze-light)}
 .service-hero .hero-lead{max-width:570px;color:rgba(250,247,240,.82)}
 .service-detail-intro{background:var(--paper)}
 .detail-narrow h2,.process-grid h2{font-size:clamp(36px,4.5vw,58px);line-height:1.08;letter-spacing:-.065em;font-weight:500}
-.detail-narrow h2 em,.process-grid h2 em{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-style:italic;color:var(--clay)}
+.detail-narrow h2 em,.process-grid h2 em{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:var(--clay)}
 .detail-narrow p:not(.section-kicker),.detail-copy{color:#716b62;line-height:2}
 .service-detail-list{background:var(--paper-deep)}
 .detail-grid{gap:16px}
@@ -359,7 +359,7 @@ input,select,textarea{border-radius:var(--radius-sm)}
 .breadcrumbs a{color:var(--bronze-light);text-decoration:none;border-bottom:1px solid rgba(196,155,115,.55);padding-bottom:3px}
 .service-hero .eyebrow{margin-top:42px}
 .service-hero h1{font-size:clamp(48px,6.5vw,82px);font-weight:500;line-height:1.04;letter-spacing:-.075em;max-width:900px}
-.service-hero h1 em{color:var(--bronze-light);font-family:"Cormorant Garamond",Georgia,serif;font-style:italic}
+.service-hero h1 em{color:var(--bronze-light);font-family:"Playfair Display",Georgia,serif;font-style:italic}
 .service-hero .hero-lead{max-width:570px;color:rgba(250,247,240,.78)}
 .service-hero .hero-actions{display:flex;flex-wrap:wrap;align-items:center}
 .service-hero .text-link{color:#f0e8dc}
@@ -367,7 +367,7 @@ input,select,textarea{border-radius:var(--radius-sm)}
 .service-detail-intro{background:var(--surface)}
 .detail-narrow{max-width:900px}
 .detail-narrow h2,.process-grid h2{font-size:clamp(36px,4.6vw,60px);line-height:1.08;letter-spacing:-.065em;font-weight:500}
-.detail-narrow h2 em,.process-grid h2 em{font-family:"Cormorant Garamond",Georgia,serif;color:var(--clay);font-style:italic}
+.detail-narrow h2 em,.process-grid h2 em{font-family:"Playfair Display",Georgia,serif;color:var(--clay);font-style:italic}
 .detail-narrow p:not(.section-kicker),.detail-copy{color:#6d675e;font-size:14px;line-height:2}
 .service-detail-list{background:var(--paper-deep)}
 .detail-grid{gap:18px}
@@ -401,16 +401,16 @@ input,select,textarea{border-radius:var(--radius-sm)}
 .project-studio:before{border-color:rgba(196,155,115,.2)}
 .studio-heading .section-kicker{color:var(--bronze-light)}
 .studio-heading h2{font-weight:500;letter-spacing:-.065em}
-.studio-heading h2 em{font-family:"Cormorant Garamond",Georgia,serif;color:var(--bronze-light)}
+.studio-heading h2 em{font-family:"Playfair Display",Georgia,serif;color:var(--bronze-light)}
 .planner-main{border:1px solid rgba(196,155,115,.26);border-radius:var(--radius-lg);background:rgba(255,255,255,.035);box-shadow:0 24px 70px rgba(0,0,0,.12)}
 .planner-step{border-color:rgba(255,255,255,.14)}
-.planner-step legend{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px}
+.planner-step legend{font-family:"Playfair Display",Georgia,serif;font-size:30px}
 .planner-options button{min-height:44px;border-color:rgba(240,232,220,.28);transition:background .25s,border-color .25s,transform .25s}
 .planner-options button:hover{transform:translateY(-2px)}
 .planner-options button[aria-pressed=true]{background:var(--bronze-light);border-color:var(--bronze-light);color:#24231f}
 .planner-result{border-radius:var(--radius-lg);background:var(--paper);box-shadow:0 24px 70px rgba(0,0,0,.2)}
 .planner-result-label{color:var(--clay)}
-.planner-result h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(36px,4vw,48px)}
+.planner-result h3{font-family:"Playfair Display",Georgia,serif;font-size:clamp(36px,4vw,48px)}
 .planner-result>p{color:#6d675e}
 .planner-divider{background:var(--line)}
 .planner-photos{border-color:rgba(196,155,115,.24)}
@@ -784,7 +784,7 @@ body.navigation-open{overflow:hidden}
 }
 .hero h1 em{
   display:inline-block;color:#d0a77e;
-  font-family:"Cormorant Garamond",Georgia,serif;
+  font-family:"Playfair Display",Georgia,serif;
   font-weight:500;letter-spacing:-.045em;
 }
 .hero-lead{
@@ -809,7 +809,7 @@ body.navigation-open{overflow:hidden}
   color:rgba(245,238,227,.56);
   font-size:8px;letter-spacing:.2em;
 }
-.hero-counter b{font-family:"Cormorant Garamond",Georgia,serif;font-size:27px;font-weight:400;color:var(--bronze-light)}
+.hero-counter b{font-family:"Playfair Display",Georgia,serif;font-size:27px;font-weight:400;color:var(--bronze-light)}
 .intro{position:relative;overflow:hidden}
 .intro::after{
   content:"";position:absolute;right:-100px;top:12%;
@@ -827,7 +827,7 @@ body.navigation-open{overflow:hidden}
 .services .service-card{min-height:355px}
 .services .service-large{min-height:455px}
 .services .service-info{max-width:680px}
-.services .service-info>span{font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;letter-spacing:.04em}
+.services .service-info>span{font-family:"Playfair Display",Georgia,serif;font-size:19px;letter-spacing:.04em}
 .services .service-info h3{max-width:560px;font-size:clamp(25px,3vw,38px);line-height:1.06}
 .services .service-info p{max-width:390px}
 .services .service-card::before{
@@ -956,7 +956,7 @@ body.navigation-open{overflow:hidden}
   font-size:10px;line-height:1.55;letter-spacing:.025em;
 }
 .hero-index li span{
-  color:#d0a77e;font-family:"Cormorant Garamond",Georgia,serif;
+  color:#d0a77e;font-family:"Playfair Display",Georgia,serif;
   font-size:17px;
 }
 @media(max-width:1100px){
@@ -977,7 +977,7 @@ body.navigation-open{overflow:hidden}
 .service-page .service-hero-content{position:relative;isolation:isolate}
 .service-page .service-hero-content::after{
   position:absolute;z-index:-1;right:2px;bottom:4px;
-  font-family:"Cormorant Garamond",Georgia,serif;
+  font-family:"Playfair Display",Georgia,serif;
   font-size:clamp(112px,18vw,230px);font-weight:400;
   line-height:.72;letter-spacing:-.09em;
   color:rgba(239,222,198,.105);pointer-events:none;
