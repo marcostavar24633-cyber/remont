@@ -193,18 +193,18 @@
 /* Cinematic depth parallax — desktop pointer movement */
 @media (hover:hover) and (pointer:fine) and (min-width:801px) and (prefers-reduced-motion:no-preference){
   .hero-image{
-    transform:translate3d(var(--parallax-bg-x,0px),var(--parallax-bg-y,0px),0) scale(1.075);
-    transition:transform 900ms cubic-bezier(.2,.7,.2,1);
+    translate:var(--parallax-bg-x,0px) var(--parallax-bg-y,0px);
+    transition:translate 900ms cubic-bezier(.2,.7,.2,1);
     will-change:transform;
   }
   .hero-content{
-    transform:translate3d(var(--parallax-copy-x,0px),var(--parallax-copy-y,0px),0);
-    transition:transform 1100ms cubic-bezier(.2,.7,.2,1);
+    translate:var(--parallax-copy-x,0px) var(--parallax-copy-y,0px);
+    transition:translate 1100ms cubic-bezier(.2,.7,.2,1);
     will-change:transform;
   }
   .hero-index{
-    transform:translate3d(var(--parallax-panel-x,0px),var(--parallax-panel-y,0px),0);
-    transition:transform 1200ms cubic-bezier(.2,.7,.2,1);
+    translate:var(--parallax-panel-x,0px) var(--parallax-panel-y,0px);
+    transition:translate 1200ms cubic-bezier(.2,.7,.2,1);
     will-change:transform;
   }
 }
