@@ -261,7 +261,7 @@
         if (entry.isIntersecting) { entry.target.classList.add('is-visible'); currentObserver.unobserve(entry.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
-    document.querySelectorAll('.service-card,.step,.portfolio-item,.faq-item,.contact-panel,.detail-card,.intro-grid > div,.section-heading,.studio-heading,.process-grid > div,.cta-inner > div').forEach((item) => {
+    document.querySelectorAll('.service-card,.step,.portfolio-item,.portfolio-intro,.portfolio-upload-note,.approach-visual,.faq-heading,.faq-item,.contact-panel,.contacts-grid > div,.planner-main,.planner-result,.detail-card,.intro-grid > div,.section-heading,.studio-heading,.process-grid > div,.cta-inner > div').forEach((item) => {
       item.classList.add('reveal'); observer.observe(item);
     });
   }
