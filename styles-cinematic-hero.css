@@ -232,3 +232,12 @@
   .hero h1{font-size:clamp(37px,9.2vw,49px);line-height:1.06;letter-spacing:-.055em}
   .hero-lead{font-size:11px;line-height:1.75;max-width:360px}
 }
+
+
+/* Softer hero copy entrance — gentle fade with minimal travel */
+@keyframes hero-copy-in{
+  from{opacity:0;transform:translate3d(0,10px,0);filter:blur(1.5px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+.hero-content>*{animation-duration:1.35s}
+.hero-index{animation-duration:1.35s}
