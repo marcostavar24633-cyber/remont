@@ -27,7 +27,7 @@ html{scroll-behavior:smooth}
 }
 .intro::before{
   content:"01";position:absolute;right:7vw;top:50%;
-  transform:translateY(-50%);font:400 clamp(150px,24vw,340px)/.7 "Cormorant Garamond",serif;
+  transform:translateY(-50%);font:400 clamp(150px,24vw,340px)/.7 "Playfair Display",serif;
   letter-spacing:-.09em;color:rgba(147,111,75,.055);pointer-events:none;
 }
 .intro::after{
@@ -40,7 +40,7 @@ html{scroll-behavior:smooth}
   letter-spacing:-.065em;font-weight:500;
 }
 .intro h2 em,.section-heading h2 em,.approach h2 em,.contacts h2 em,.cta-band h2 em{
-  color:#9b7956;font-family:"Cormorant Garamond",Georgia,serif;
+  color:#9b7956;font-family:"Playfair Display",Georgia,serif;
   font-size:1.13em;font-weight:500;letter-spacing:-.035em;
 }
 .intro-copy{max-width:620px;color:#66645d;font-size:14px;line-height:2}
@@ -86,14 +86,14 @@ html{scroll-behavior:smooth}
   color:#f1ede5;padding-top:clamp(90px,10vw,145px);padding-bottom:clamp(90px,10vw,145px);
 }
 .project-studio::before{
-  content:"03";position:absolute;right:4vw;top:4%;font:400 clamp(180px,30vw,430px)/.8 "Cormorant Garamond",serif;
+  content:"03";position:absolute;right:4vw;top:4%;font:400 clamp(180px,30vw,430px)/.8 "Playfair Display",serif;
   color:rgba(224,196,158,.045);pointer-events:none;letter-spacing:-.1em;
 }
 .project-studio::after{border-color:rgba(196,155,115,.18)}
 .studio-heading{position:relative;z-index:1;max-width:760px}
 .studio-heading .section-kicker{color:var(--cin-brass-light)}
 .studio-heading h2{color:#f4eee4;letter-spacing:-.07em}
-.studio-heading h2 em{color:var(--cin-brass-light);font-family:"Cormorant Garamond",serif}
+.studio-heading h2 em{color:var(--cin-brass-light);font-family:"Playfair Display",serif}
 .studio-heading>p:last-child{color:rgba(242,236,225,.62);font-size:12px;line-height:1.95}
 .planner-shell{
   position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.75fr);
@@ -103,7 +103,7 @@ html{scroll-behavior:smooth}
 .planner-main{background:rgba(245,239,228,.035);padding:clamp(25px,4vw,50px)}
 .planner-step{border-bottom:1px solid rgba(226,205,177,.16)}
 .planner-step legend{color:#f2ede4;font-size:13px;font-weight:600}
-.planner-step legend span{color:var(--cin-brass-light);font:400 21px "Cormorant Garamond",serif;margin-right:12px}
+.planner-step legend span{color:var(--cin-brass-light);font:400 21px "Playfair Display",serif;margin-right:12px}
 .planner-options{gap:8px}
 .planner-options button{
   min-height:43px;padding:10px 16px;border:1px solid rgba(226,205,177,.23);
@@ -120,7 +120,7 @@ html{scroll-behavior:smooth}
   color:#252820;padding:clamp(25px,3vw,40px);border:1px solid rgba(255,255,255,.4);
 }
 .planner-result-label,.planner-photos-label{color:#92704d;letter-spacing:.2em;font-size:8px;font-weight:800}
-.planner-result h3{font:500 clamp(29px,3vw,42px)/1.05 "Cormorant Garamond",serif;letter-spacing:-.025em}
+.planner-result h3{font:500 clamp(29px,3vw,42px)/1.05 "Playfair Display",serif;letter-spacing:-.025em}
 .planner-result>p{color:#6b675e;font-size:11px;line-height:1.8}
 .planner-divider{background:rgba(110,89,65,.22)}
 .portfolio{
@@ -149,7 +149,7 @@ html{scroll-behavior:smooth}
 .portfolio-item:hover img,.portfolio-item:focus-within img{transform:scale(1.045);filter:saturate(.95) contrast(1.03)}
 .portfolio-item::after{content:"";position:absolute;inset:35% 0 0;pointer-events:none;background:linear-gradient(transparent,rgba(17,21,17,.72))}
 .portfolio-item figcaption{z-index:2;padding:25px 28px;color:#f5efe5}
-.portfolio-item figcaption b{font:500 28px "Cormorant Garamond",serif}
+.portfolio-item figcaption b{font:500 28px "Playfair Display",serif}
 .portfolio-item figcaption span{display:block;margin-top:5px;color:rgba(245,239,229,.72);font-size:9px;letter-spacing:.08em}
 .portfolio-upload-note{
   display:flex;align-items:center;gap:20px;max-width:650px;margin-top:26px;
@@ -165,14 +165,14 @@ html{scroll-behavior:smooth}
   background:#20231f;color:#f1ede5;padding-top:clamp(90px,10vw,145px);padding-bottom:clamp(90px,10vw,145px);
 }
 .faq::before{
-  content:"06";position:absolute;left:-.02em;bottom:-.2em;font:400 clamp(200px,32vw,450px)/.8 "Cormorant Garamond",serif;
+  content:"06";position:absolute;left:-.02em;bottom:-.2em;font:400 clamp(200px,32vw,450px)/.8 "Playfair Display",serif;
   color:rgba(218,190,155,.035);pointer-events:none;
 }
 .faq-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:clamp(45px,9vw,140px);align-items:start}
 .faq-heading{position:sticky;top:110px}
 .faq-heading .section-kicker{color:var(--cin-brass-light)}
 .faq-heading h2{font-size:clamp(39px,5vw,67px);line-height:1.04;letter-spacing:-.065em}
-.faq-heading h2 em{color:var(--cin-brass-light);font:500 1.12em "Cormorant Garamond",serif}
+.faq-heading h2 em{color:var(--cin-brass-light);font:500 1.12em "Playfair Display",serif}
 .faq-heading>p:not(.section-kicker){max-width:390px;color:rgba(239,234,224,.6);font-size:12px;line-height:1.9;margin:24px 0 30px}
 .faq-heading .button-accent{
   min-height:53px;padding:15px 22px;border-radius:999px;
@@ -190,7 +190,7 @@ html{scroll-behavior:smooth}
 .faq-item summary::after{
   content:"+";position:absolute;right:5px;top:50%;transform:translateY(-50%);
   display:grid;place-items:center;width:30px;height:30px;border:1px solid rgba(218,190,155,.38);
-  border-radius:50%;color:var(--cin-brass-light);font:300 20px "Manrope",sans-serif;
+  border-radius:50%;color:var(--cin-brass-light);font:300 20px "DM Sans",sans-serif;
   transition:transform .35s var(--cin-ease),background .35s,color .35s
 }
 .faq-item[open] summary{color:var(--cin-brass-light)}
@@ -227,7 +227,7 @@ html{scroll-behavior:smooth}
   padding-top:clamp(90px,10vw,145px);padding-bottom:clamp(90px,10vw,145px)
 }
 .contacts::before{
-  content:"08";position:absolute;right:4vw;top:5%;font:400 clamp(190px,30vw,420px)/.8 "Cormorant Garamond",serif;
+  content:"08";position:absolute;right:4vw;top:5%;font:400 clamp(190px,30vw,420px)/.8 "Playfair Display",serif;
   color:rgba(147,111,75,.055);pointer-events:none
 }
 .contacts-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr minmax(310px,.8fr);gap:clamp(40px,9vw,130px);align-items:center}
@@ -237,7 +237,7 @@ html{scroll-behavior:smooth}
 .contact-copy{max-width:410px;margin:23px 0;color:#777168;font-size:12px;line-height:1.9}
 .contact-phone{
   display:inline-block;margin-top:12px;color:#292c25;
-  font:500 clamp(28px,4vw,48px) "Cormorant Garamond",serif;
+  font:500 clamp(28px,4vw,48px) "Playfair Display",serif;
   letter-spacing:-.025em;text-decoration:none;border-bottom:1px solid rgba(155,121,86,.4);
   padding-bottom:7px;transition:color .3s,border-color .3s
 }
@@ -249,7 +249,7 @@ html{scroll-behavior:smooth}
   box-shadow:0 25px 65px rgba(48,42,32,.13)
 }
 .panel-label{color:var(--cin-brass-light);font-size:8px;font-weight:800;letter-spacing:.2em}
-.contact-panel h3{margin:20px 0 10px;font:500 34px "Cormorant Garamond",serif}
+.contact-panel h3{margin:20px 0 10px;font:500 34px "Playfair Display",serif}
 .contact-panel>p:not(.privacy-note){color:rgba(239,234,224,.6);font-size:11px;line-height:1.8}
 .contact-panel .button-accent{
   display:flex;justify-content:space-between;align-items:center;margin:25px 0 18px;
