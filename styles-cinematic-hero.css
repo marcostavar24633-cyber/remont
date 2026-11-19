@@ -281,3 +281,30 @@
     text-shadow:0 2px 16px rgba(0,0,0,.48);
   }
 }
+
+
+/* Final hero-to-intro dissolve — keep the ivory fade above the dark overlays */
+.hero-shade{
+  background:
+    linear-gradient(to bottom,
+      transparent 48%,
+      rgba(238,233,223,.08) 62%,
+      rgba(238,233,223,.24) 73%,
+      rgba(238,233,223,.58) 87%,
+      #eee9df 100%),
+    linear-gradient(90deg,rgba(12,22,17,.93) 0%,rgba(15,27,20,.78) 37%,rgba(15,27,20,.3) 72%,rgba(15,27,20,.12) 100%),
+    linear-gradient(0deg,rgba(10,18,14,.58) 0%,transparent 48%,rgba(10,18,14,.2) 100%);
+}
+@media(max-width:800px){
+  .hero-shade{
+    background:
+      linear-gradient(to bottom,
+        transparent 46%,
+        rgba(238,233,223,.08) 61%,
+        rgba(238,233,223,.25) 74%,
+        rgba(238,233,223,.62) 88%,
+        #eee9df 100%),
+      linear-gradient(90deg,rgba(12,22,17,.92),rgba(15,27,20,.48)),
+      linear-gradient(0deg,rgba(10,18,14,.5) 0%,transparent 52%);
+  }
+}
