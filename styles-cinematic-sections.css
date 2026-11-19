@@ -472,3 +472,82 @@ html{scroll-behavior:smooth}
   .portfolio-intro,.portfolio-upload-note{border-radius:17px}
   .hero-index{border-radius:20px}
 }
+
+/* Tonal harmony with the hero — muted stone, smoked olive and aged bronze */
+:root{
+  --cin-paper:#d9d6cd;
+  --cin-paper-deep:#cfcbc1;
+  --cin-brass:#a98e6d;
+  --cin-brass-light:#c4ad8e;
+  --cin-line:rgba(169,142,109,.24);
+}
+/* Light sections are intentionally softened, avoiding bright ivory panels */
+.intro,
+.contacts{
+  background:linear-gradient(125deg,#d8d5cc 0%,#d1cec4 100%);
+  color:#292d27;
+}
+.portfolio{
+  background:linear-gradient(135deg,#d0cdc3 0%,#d8d5cc 52%,#cbc8be 100%);
+  color:#292d27;
+}
+.intro::before,.contacts::before{color:rgba(83,86,75,.055)}
+.portfolio::before{
+  background:radial-gradient(ellipse at 0 100%,rgba(125,111,88,.08),transparent 34%);
+}
+.intro h2 em,.section-heading h2 em,.approach h2 em,
+.contacts h2 em,.portfolio .section-heading h2 em{color:#89765d}
+.intro-copy,.portfolio .section-heading>p,.contact-copy{color:#696960}
+.portfolio-intro{background:rgba(245,242,234,.22);border-color:rgba(115,104,85,.15)}
+.portfolio-intro::before{background:#9e896c}
+.portfolio-tag,.portfolio-upload-note .placeholder-icon{color:#89765d}
+.portfolio-upload-note{background:rgba(245,242,234,.18);border-color:rgba(115,104,85,.18)}
+.portfolio-upload-note b{color:#34372f}
+.portfolio-upload-note p{color:#706e65}
+.contacts .section-kicker,.section-kicker{color:#89765d}
+.contact-phone{color:#30332c;border-color:rgba(137,118,93,.38)}
+.contact-phone:hover{color:#89765d;border-color:#89765d}
+/* The call-to-action becomes a quiet bridge between dark and stone sections */
+.cta-band{
+  background:linear-gradient(115deg,#8c897d 0%,#969183 52%,#858477 100%);
+  color:#f0eee7;
+}
+.cta-band::before{
+  opacity:.22;
+  background:linear-gradient(90deg,transparent 49.95%,rgba(28,32,27,.12) 50%,transparent 50.05%),
+    radial-gradient(ellipse at 90% 20%,rgba(255,255,255,.16),transparent 35%);
+}
+.cta-band::after{border-color:rgba(242,237,225,.13);box-shadow:0 0 0 36px rgba(242,237,225,.035),0 0 0 72px rgba(242,237,225,.025)}
+.cta-band .section-kicker{color:#e2d9c9}
+.cta-band .section-kicker::before{background:#d0c2aa}
+.cta-band h2,.cta-band h2 em{color:#f3f0e8}
+.cta-band .button-light{
+  border-color:rgba(244,240,230,.45);
+  background:#30352e;color:#eeeae0;
+}
+.cta-band .button-light:hover{background:#e2ddd2;color:#30352e}
+/* Result surfaces and accents are less luminous, more tactile */
+.planner-result{
+  background:linear-gradient(145deg,#d6d0c3,#c9c2b3);
+  border-color:rgba(255,255,255,.22);
+}
+.planner-result-label,.planner-photos-label{color:#88765d}
+.planner-result h3{color:#2d3029}
+.planner-result>p{color:#6a685f}
+.planner-options button[aria-pressed=true]{
+  border-color:#a98e6d;
+  background:linear-gradient(120deg,#ad9676,#c2ad8e);
+  color:#252a23;
+  box-shadow:0 5px 16px rgba(0,0,0,.1);
+}
+.services .service-info>span,.services .service-more,
+.faq-heading .section-kicker,.faq-item[open] summary{color:#c4ad8e}
+.services .section-heading h2 em,.studio-heading h2 em{color:#c4ad8e}
+.hero-actions .button-accent,.faq-heading .button-accent,.contact-panel .button-accent{
+  background:linear-gradient(115deg,#ad9676,#c5b092 52%,#ad9676);
+}
+@media(max-width:640px){
+  .intro,.contacts{background:linear-gradient(145deg,#d8d5cc,#d1cec4)}
+  .portfolio{background:linear-gradient(145deg,#d0cdc3,#d8d5cc)}
+  .cta-band{background:linear-gradient(145deg,#8c897d,#858477)}
+}
