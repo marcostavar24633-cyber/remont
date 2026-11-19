@@ -1020,3 +1020,16 @@ body{font-family:var(--font-ui)}
   .gallery-lightbox[open]{animation:none}
   .gallery-close{transition:none}
 }
+
+
+.portfolio-item img:focus-visible{
+  outline:2px solid #e2c39a;
+  outline-offset:-5px;
+}
+.portfolio-item:focus-visible{
+  outline:2px solid #a98761;
+  outline-offset:5px;
+}
+@media(hover:hover) and (pointer:fine){
+  .portfolio-item{cursor:zoom-in}
+}
