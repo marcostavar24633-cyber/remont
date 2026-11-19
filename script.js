@@ -150,8 +150,8 @@
     link.click();
     link.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    trackEvent('planner_brief_download');
-    if (plannerShareStatus) plannerShareStatus.textContent = 'Бриф скачан на ваше устройство. Его можно отправить вместе с фотографиями в удобном мессенджере.';
+    trackEvent('planner_demo_download');
+    if (plannerShareStatus) plannerShareStatus.textContent = 'Демонстрационный файл скачан. Он не отправлен компании и не является заявкой.';
   });
   const photoInput = document.querySelector('#planner-photos-input');
   const photoPreview = document.querySelector('#planner-photos-preview');
@@ -200,43 +200,10 @@
   });
   window.addEventListener('pagehide', revokePhotoUrls);
 
-  plannerShare?.addEventListener('click', async () => {
-    const text = buildPlannerBrief();
-    const files = selectedPhotos.map((photo) => photo.file);
-    if (plannerShareStatus) plannerShareStatus.textContent = '';
-    if (files.length && navigator.share && navigator.canShare) {
-      try {
-        const shareData = { title: 'Бриф на ремонт — Дом Ульяновск', text, files };
-        if (navigator.canShare({ files })) {
-          await navigator.share(shareData);
-          trackEvent('planner_share_complete', { share_method: 'native_share', photo_count: files.length });
-          if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки. Проверьте выбранные фотографии и подтвердите отправку в приложении.';
-          return;
-        }
-      } catch (error) {
-        if (error?.name === 'AbortError') return;
-      }
-    } else if (!files.length && navigator.share) {
-      try {
-        await navigator.share({ title: 'Бриф на ремонт — Дом Ульяновск', text });
-        trackEvent('planner_share_complete', { share_method: 'native_share', photo_count: 0 });
-        if (plannerShareStatus) plannerShareStatus.textContent = 'Открыто меню отправки.';
-        return;
-      } catch (error) {
-        if (error?.name === 'AbortError') return;
-      }
-    }
-    try {
-      await navigator.clipboard.writeText(text);
-      trackEvent('planner_share_complete', { share_method: 'clipboard', photo_count: files.length });
-      if (plannerShareStatus) plannerShareStatus.textContent = files.length
-        ? 'Текст брифа скопирован. Браузер не поддерживает отправку фотографий из этого окна — прикрепите выбранные изображения вручную в мессенджере.'
-        : 'Бриф скопирован. Вставьте его в удобный мессенджер.';
-    } catch {
-      if (plannerShareStatus) plannerShareStatus.textContent = files.length
-        ? 'Не удалось передать файлы. Позвоните по кнопке выше и прикрепите фотографии вручную в мессенджере.'
-        : 'Не удалось открыть отправку или скопировать текст. Можно позвонить по кнопке выше.';
-    }
+  plannerShare?.addEventListener('click', () => {
+    const brief = buildPlannerBrief();
+    if (plannerShareStatus) plannerShareStatus.textContent = 'Пример брифа подготовлен. Нажмите «Скачать пример брифа», чтобы сохранить его на устройство.\\n\\n' + brief;
+    trackEvent('planner_demo_prepare');
   });
 
   const gallery = document.querySelector('.gallery-lightbox');
