@@ -1366,3 +1366,57 @@ body{font-family:var(--font-ui)}
     background-size:100% 100%!important;
   }
 }
+
+
+/* Contrast correction: keep all copy readable over the dark-to-stone transitions */
+.approach{
+  color:#f5f0e7!important;
+  background:linear-gradient(180deg,#222821 0%,#292e28 58%,#b3ad9f 100%)!important;
+}
+.approach .approach-content .section-kicker{
+  color:#e3c39a!important;
+}
+.approach .approach-content h2,
+.approach .approach-content h2 em{
+  color:#f7f2e9!important;
+  text-shadow:0 2px 16px rgba(0,0,0,.22);
+}
+.approach .approach-desc{
+  color:rgba(250,247,239,.9)!important;
+}
+.approach .steps{
+  border-color:rgba(241,230,211,.3)!important;
+}
+.approach .step{
+  border-color:rgba(241,230,211,.25)!important;
+}
+.approach .step>b{color:#e2bd8d!important}
+.approach .step h3{color:#fffaf2!important}
+.approach .step p{color:rgba(250,247,239,.82)!important}
+.portfolio .section-heading .section-kicker{
+  color:#806448!important;
+  opacity:1!important;
+}
+.portfolio .section-heading h2{color:#252820!important}
+.portfolio .section-heading h2 em{color:#806448!important}
+.portfolio .section-heading>p{
+  color:#514f47!important;
+  opacity:1!important;
+}
+.portfolio .portfolio-tag{color:#806448!important}
+.portfolio .portfolio-intro p,
+.portfolio .portfolio-upload-note p{color:#494940!important}
+.portfolio-item figcaption::after{content:none!important;display:none!important}
+/* No decorative arrows in button-like links; keep only functional menu/disclosure icons */
+.button span,.button-accent span,.button-light span,
+.service-more span,.contact-brief-link span,.text-link span,
+.mobile-nav-call span{display:none!important}
+@media(max-width:800px){
+  .approach .approach-content .section-kicker{color:#e3c39a!important}
+  .approach .approach-content h2,
+  .approach .approach-content h2 em{color:#fffaf2!important}
+  .approach .approach-desc,
+  .approach .step p{color:rgba(250,247,239,.9)!important}
+  .portfolio .section-heading .section-kicker{color:#806448!important}
+  .portfolio .section-heading>p{color:#514f47!important}
+}
