@@ -377,3 +377,41 @@
 @media(prefers-reduced-motion:reduce){
   .hero-image{animation:none!important;transition:none!important;transform:none!important}
 }
+
+
+/* Warm atmospheric halo around the cinematic hero photography */
+.hero{background:#c9c3b5}
+.hero-image{
+  -webkit-mask-image:radial-gradient(ellipse 112% 108% at 50% 43%,
+    #000 61%,
+    rgba(0,0,0,.94) 73%,
+    rgba(0,0,0,.62) 88%,
+    transparent 100%);
+  mask-image:radial-gradient(ellipse 112% 108% at 50% 43%,
+    #000 61%,
+    rgba(0,0,0,.94) 73%,
+    rgba(0,0,0,.62) 88%,
+    transparent 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:-8%;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 42%,transparent 42%,rgba(201,195,181,.16) 76%,#c9c3b5 100%),
+    radial-gradient(ellipse at 76% 30%,rgba(222,194,157,.12),transparent 52%);
+  filter:blur(22px);
+}
+.hero-shade{z-index:2}
+.hero-content,.hero-index,.hero-counter,.hero-visual-note{z-index:3}
+@media(max-width:800px){
+  .hero-image{
+    -webkit-mask-image:radial-gradient(ellipse 125% 112% at 50% 42%,
+      #000 66%,rgba(0,0,0,.94) 79%,rgba(0,0,0,.6) 92%,transparent 100%);
+    mask-image:radial-gradient(ellipse 125% 112% at 50% 42%,
+      #000 66%,rgba(0,0,0,.94) 79%,rgba(0,0,0,.6) 92%,transparent 100%);
+  }
+  .hero::before{inset:-4%;filter:blur(16px)}
+}
