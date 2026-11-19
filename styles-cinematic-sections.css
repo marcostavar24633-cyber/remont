@@ -1702,3 +1702,40 @@ body{font-family:var(--font-ui)}
   .page-services .detail-card{transition:none!important}
   .page-services .detail-card:hover{transform:none}
 }
+
+
+/* Seamless cinematic hand-off from every service hero into the first section.
+   The stone tone matches the opening background of all service/catalog pages. */
+.service-page .service-hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#c9c3b5!important;
+}
+.service-page .service-hero-image,
+.service-page .service-hero-shade{
+  z-index:0;
+}
+.service-page .service-hero::after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  left:0;right:0;bottom:0;
+  height:clamp(170px,25vh,270px);
+  pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(201,195,181,0) 0%,
+    rgba(201,195,181,.12) 32%,
+    rgba(201,195,181,.48) 68%,
+    #c9c3b5 100%);
+}
+.service-page .service-hero-content{
+  position:relative;
+  z-index:2;
+}
+@media(max-width:800px){
+  .service-page .service-hero::after{height:190px}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-page .service-hero::after{transition:none}
+}
