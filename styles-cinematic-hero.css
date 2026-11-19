@@ -335,3 +335,45 @@
       linear-gradient(0deg,rgba(10,18,14,.5) 0%,transparent 52%);
   }
 }
+
+
+/* Cinematic hero slideshow: slow cross-dissolves with a restrained camera drift */
+.hero{overflow:hidden}
+.hero-image{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  opacity:1;
+  background-size:cover;
+  background-position:center 52%;
+  transform:scale(1.045);
+  transition:opacity 2.4s cubic-bezier(.22,.61,.36,1),filter 2.4s ease;
+  animation:hero-film-drift 18s ease-in-out infinite alternate;
+  will-change:opacity,transform;
+}
+.hero-image--secondary{opacity:0;pointer-events:none}
+.hero-image.is-active{opacity:1}
+.hero-image:not(.is-active){filter:brightness(.88)}
+.hero-visual-note{
+  position:absolute;
+  z-index:3;
+  left:max(24px,calc((100vw - 1240px)/2));
+  bottom:24px;
+  margin:0;
+  color:rgba(248,242,230,.66);
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+}
+@keyframes hero-film-drift{
+  from{transform:scale(1.045) translate3d(0,0,0)}
+  to{transform:scale(1.105) translate3d(-.7%,-.35%,0)}
+}
+@media(max-width:800px){
+  .hero-image{background-position:60% center;animation-duration:22s}
+  .hero-visual-note{left:20px;right:20px;bottom:18px;font-size:8px;line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-image{animation:none!important;transition:none!important;transform:none!important}
+}
